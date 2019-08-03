@@ -1,0 +1,6 @@
+<div class="card">
+    <img [src]="product.imageUrl" alt="product" class="card__productImage">
+    <div class="card__title--top-left">{{product.title}}</div>
+    <div class="card__title--top-right">{{product.price | currency }}</div>
+    <p class="car__description">{{product.description}}</p>
+</div>

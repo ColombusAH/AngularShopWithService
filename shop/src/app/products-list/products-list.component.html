@@ -1,3 +1,5 @@
 <div class="productList--flex">
-    
+    <app-product *ngFor="let p of products" [product]="p" (click)="productClicked(p)">
+
+    </app-product>
 </div>

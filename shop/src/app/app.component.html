@@ -4,4 +4,12 @@
     </div>
     <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"></app-sidebar-menu>
     <img class="img--wallBackground" src="assets/wallBackground.jpg">
+
+    <div class="main__container">
+        <div>
+            <h3>Buy our products</h3>
+        </div>
+        <app-products-list [products]="productList" (onProductClicked)="productSelected"></app-products-list>
+    </div>
+
 </main>
