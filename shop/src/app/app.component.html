@@ -1,1 +1,7 @@
-<app-header></app-header>
+<main>
+    <div class="headerSection--full">
+        <app-header (menuBarBtnClick)="toggleMenuBar()"></app-header>
+    </div>
+    <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"></app-sidebar-menu>
+    <img class="img--wallBackground" src="assets/wallBackground.jpg">
+</main>
