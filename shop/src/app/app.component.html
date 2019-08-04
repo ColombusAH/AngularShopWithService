@@ -1,15 +1,24 @@
 <main>
     <div class="headerSection--full">
-        <app-header (menuBarBtnClick)="toggleMenuBar()"></app-header>
+        <app-header (menuBarTogglerEvent)="toggleMenuBar()"></app-header>
     </div>
-    <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"></app-sidebar-menu>
+    <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"
+        (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames"></app-sidebar-menu>
     <img class="img--wallBackground" src="assets/wallBackground.jpg">
 
-    <div class="main__container">
-        <div>
-            <h3>Buy our products</h3>
-        </div>
-        <app-products-list [products]="productList" (onProductClicked)="productSelected"></app-products-list>
-    </div>
 
-</main>
+    <main [ngSwitch]="currentPage">
+        <div *ngSwitchCase="'Home'" class="main__view--page">
+            <div>
+                <h3>Buy our products</h3>
+            </div>
+            <app-products-list [products]="productList" (onProductClicked)="productSelected"></app-products-list>
+        </div>
+        <div *ngSwitchCase="'About'" class="main__view--page">
+            <div>
+                <h3>About</h3>
+            </div>
+
+        </div>
+
+    </main>

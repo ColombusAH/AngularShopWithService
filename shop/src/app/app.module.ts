@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductComponent } from './product/product.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
+import { SidebarMenuLinkComponent } from './sidebar-menu-link/sidebar-menu-link.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
     HeaderComponent,
     ProductsListComponent,
     ProductComponent,
-    SidebarMenuComponent
+    SidebarMenuComponent,
+    SidebarMenuLinkComponent
   ],
   imports: [
     BrowserModule

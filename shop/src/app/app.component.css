@@ -9,7 +9,7 @@
   margin-bottom: 1.5em;
 }
 
-.main__container {
+.main__view--page {
   box-shadow: 2px 4px 8px 0 rgba(0.2, 0.2, 0.2, 0.2);
   padding: 3em;
 }

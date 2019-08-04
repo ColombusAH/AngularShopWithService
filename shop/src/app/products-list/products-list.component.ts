@@ -12,7 +12,6 @@ export class ProductsListComponent implements OnInit {
   constructor() {}
 
   productClicked(product: Product) {
-    console.log('product clicked', product);
     this.onProductClicked.emit(product);
   }
   ngOnInit() {}

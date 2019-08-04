@@ -6,11 +6,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() menuBarBtnClick = new EventEmitter();
+  @Output() menuBarTogglerEvent = new EventEmitter();
   constructor() {}
 
   onMenuBarBtnClicked() {
-    this.menuBarBtnClick.emit();
+    this.menuBarTogglerEvent.emit();
   }
   ngOnInit() {}
 }
