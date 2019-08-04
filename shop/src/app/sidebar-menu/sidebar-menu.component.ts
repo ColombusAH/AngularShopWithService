@@ -17,6 +17,7 @@ export class SidebarMenuComponent implements OnInit {
   }
   onLinkClicked(linkName) {
     this.pageNavigaterEvent.emit(linkName);
+    this.onCloseMenuBar.emit();
   }
   ngOnInit() {}
 }

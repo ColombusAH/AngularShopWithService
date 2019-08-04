@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductComponent } from './product/product.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
-import { SidebarMenuLinkComponent } from './sidebar-menu-link/sidebar-menu-link.component';
+import { CategorySelectorComponent } from './category-selector/category-selector.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +15,10 @@ import { SidebarMenuLinkComponent } from './sidebar-menu-link/sidebar-menu-link.
     ProductsListComponent,
     ProductComponent,
     SidebarMenuComponent,
-    SidebarMenuLinkComponent
+    CategorySelectorComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
