@@ -12,7 +12,7 @@ export class CategorySelectorComponent implements OnInit {
   constructor() {}
 
   categorySelected(selectedCategory: Category) {
-    console.log(selectedCategory);
+    this.categorySelectedEvent.emit(selectedCategory);
   }
   ngOnInit() {}
 }

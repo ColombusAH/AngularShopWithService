@@ -14,26 +14,14 @@ export class AppComponent {
 
   pagesNames = ['Home', 'About', 'Products', 'Contact'];
 
-  productList: Product[] = [
-    new Product('1234', 'assets/products/11.jpeg', 'dog', 1000, 'Just a dog'),
-    new Product('1234', 'assets/products/11.jpeg', 'dog', 1100, 'Just a dog'),
-    new Product('1234', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
-    new Product('1234', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
-    new Product('1234', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
-    new Product('1234', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog')
-  ];
+  productList = this.getAllProducts();
 
   categoriesList: Category[] = [
+    new Category('0', 'All'),
     new Category('1', 'cat1'),
     new Category('2', 'cat2'),
     new Category('3', 'cat3'),
-    new Category('3', 'cat3'),
-    new Category('3', 'cat3'),
-    new Category('3', 'cat3'),
-    new Category('3', 'cat3'),
-    new Category('3', 'cat3'),
-    new Category('3', 'cat3'),
-    new Category('3', 'cat3')
+    new Category('4', 'cat4')
   ];
 
   toggleMenuBar() {
@@ -41,5 +29,30 @@ export class AppComponent {
   }
   changePage(page: string) {
     this.currentPage = page;
+  }
+
+  sortProductsByCategory(category: Category) {
+    this.productList = this.getAllProducts();
+    if (category.title.toLowerCase() !== 'all') {
+      this.productList = this.productList.filter(
+        p => p.categoryId.localeCompare(category.id) === 0
+      );
+    }
+  }
+
+  private getAllProducts(): Product[] {
+    const productList: Product[] = [
+      new Product('1', 'assets/products/11.jpeg', 'dog', 1000, 'Just a dog'),
+      new Product('2', 'assets/products/11.jpeg', 'dog', 1100, 'Just a dog'),
+      new Product('3', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
+      new Product('1', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
+      new Product('2', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
+      new Product('3', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
+      new Product('1', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
+      new Product('4', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
+      new Product('4', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
+      new Product('4', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog')
+    ];
+    return productList;
   }
 }

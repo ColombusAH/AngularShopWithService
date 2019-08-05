@@ -12,7 +12,8 @@
             <div>
                 <h3>Buy our products</h3>
             </div>
-            <app-category-selector [categoriesList]="categoriesList"></app-category-selector>
+            <app-category-selector [categoriesList]="categoriesList"
+                (categorySelectedEvent)="sortProductsByCategory($event)"></app-category-selector>
             <app-products-list [products]="productList" (onProductClicked)="productSelected"></app-products-list>
         </div>
         <div *ngSwitchCase="'About'" class="main__view--page">
