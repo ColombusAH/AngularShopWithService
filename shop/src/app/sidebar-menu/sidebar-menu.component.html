@@ -1,4 +1,16 @@
 <div id="navbar" class="sidenav" [style.width]="isOpen  ? '250px': '0'">
     <a href="#" class="closebtn" (click)="closeMenuBar()">&times;</a>
     <a *ngFor="let linkName  of linksNames" href="#" (click)="onLinkClicked(linkName)">{{linkName}}</a>
+    <div class="navbar__socialIcon--end">
+        <a href="https://www.facebook.com/" target="_blank">
+            <img alt="Facebook" src="assets/socialIcons/facebook.png">
+        </a>
+        <a href="https://www.github.com/" target="_blank">
+            <img alt="Github" src="assets/socialIcons/github.png">
+        </a>
+
+        <a href="mailto: abc@example.com" target="_blank">
+            <img alt="Mail" src="assets/socialIcons/mail.png">
+        </a>
+    </div>
 </div>

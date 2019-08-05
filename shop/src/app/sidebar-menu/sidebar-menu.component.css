@@ -1,4 +1,7 @@
 .sidenav {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: stretch;
   height: 100%;
   width: 0;
   position: fixed;
@@ -16,7 +19,6 @@
   text-decoration: none;
   font-size: 25px;
   color: #818181;
-  display: block;
   transition: 0.3s;
 }
 
@@ -30,6 +32,28 @@
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+.navbar__socialIcon--end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 1;
+  width: 100%;
+  min-height: 15%;
+  margin-top: auto;
+  margin-bottom: 3em;
+  padding-left: 1em;
+}
+
+.navbar__socialIcon--end img {
+  border-radius: 60%;
+  height: 40%;
+  width: 40%;
+}
+.navbar__socialIcon--end a {
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-height: 450px) {
