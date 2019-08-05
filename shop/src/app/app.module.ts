@@ -7,6 +7,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductComponent } from './product/product.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { CategorySelectorComponent } from './category-selector/category-selector.component';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CategorySelectorComponent } from './category-selector/category-selector
     ProductsListComponent,
     ProductComponent,
     SidebarMenuComponent,
-    CategorySelectorComponent
+    CategorySelectorComponent,
+    SummaryPipe
   ],
   imports: [BrowserModule],
   providers: [],

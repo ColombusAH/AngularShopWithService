@@ -42,7 +42,13 @@ export class AppComponent {
 
   private getAllProducts(): Product[] {
     const productList: Product[] = [
-      new Product('1', 'assets/products/11.jpeg', 'dog', 1000, 'Just a dog'),
+      new Product(
+        '1',
+        'assets/products/11.jpeg',
+        'dog',
+        1000,
+        'Just a dog ffvgrfrgfrffrgfvtgrfvghrvghrvghrvghrfvgtghrvtgfdvtgffbrfvghrvghr'
+      ),
       new Product('2', 'assets/products/11.jpeg', 'dog', 1100, 'Just a dog'),
       new Product('3', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),
       new Product('1', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog'),

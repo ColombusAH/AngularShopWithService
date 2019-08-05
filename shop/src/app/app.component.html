@@ -10,27 +10,39 @@
     <main [ngSwitch]="currentPage">
         <div *ngSwitchCase="'Home'" class="main__view--page">
             <div>
-                <h3>Buy our products</h3>
+                <h1>Buy our products</h1>
             </div>
+
             <app-category-selector [categoriesList]="categoriesList"
                 (categorySelectedEvent)="sortProductsByCategory($event)"></app-category-selector>
+
             <app-products-list [products]="productList" (onProductClicked)="productSelected"></app-products-list>
         </div>
+
         <div *ngSwitchCase="'About'" class="main__view--page">
             <div>
-                <h3>About</h3>
+                <h1>About</h1>
             </div>
-
+            <p>
+                bla bla bla bla
+                bla bla bla bla
+                bla bla bla bla
+                bla bla bla bla
+                bla bla bla bla
+                bla bla bla bla
+            </p>
         </div>
+
         <div *ngSwitchCase="'Products'" class="main__view--page">
             <div>
-                <h3>Products</h3>
+                <h1>Product details</h1>
             </div>
 
         </div>
+
         <div *ngSwitchCase="'Contact'" class="main__view--page">
             <div>
-                <h3>Contact</h3>
+                <h1>Contact</h1>
             </div>
 
         </div>
