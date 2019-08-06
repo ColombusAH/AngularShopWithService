@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'shop';
   currentPage: string = 'Home';
+  currentProduct: Product = null;
   menubarMode: boolean = false;
 
   pagesNames = ['Home', 'About', 'Products', 'Contact'];
@@ -60,5 +61,10 @@ export class AppComponent {
       new Product('4', 'assets/products/11.jpeg', 'dog', 1200, 'Just a dog')
     ];
     return productList;
+  }
+
+  productSelected(product: Product) {
+    this.currentProduct = product;
+    this.currentPage = 'Product Details';
   }
 }

@@ -7,16 +7,13 @@
     <img class="img--wallBackground" src="assets/wallBackground.jpg">
 
 
-    <main [ngSwitch]="currentPage">
+    <section [ngSwitch]="currentPage">
+
         <div *ngSwitchCase="'Home'" class="main__view--page">
             <div>
-                <h1>Buy our products</h1>
+                <h1>Welcome</h1>
             </div>
-
-            <app-category-selector [categoriesList]="categoriesList"
-                (categorySelectedEvent)="sortProductsByCategory($event)"></app-category-selector>
-
-            <app-products-list [products]="productList" (onProductClicked)="productSelected"></app-products-list>
+            <p>Welcome to the best cake house in town!</p>
         </div>
 
         <div *ngSwitchCase="'About'" class="main__view--page">
@@ -35,16 +32,23 @@
 
         <div *ngSwitchCase="'Products'" class="main__view--page">
             <div>
-                <h1>Product details</h1>
+                <h1>Buy our products</h1>
             </div>
+            <app-category-selector [categoriesList]="categoriesList"
+                (categorySelectedEvent)="sortProductsByCategory($event)">
+            </app-category-selector>
 
+            <app-products-list [products]="productList" (onProductClicked)="productSelected($event)">
+            </app-products-list>
         </div>
 
         <div *ngSwitchCase="'Contact'" class="main__view--page">
             <div>
                 <h1>Contact</h1>
             </div>
-
         </div>
-
-    </main>
+        <div *ngSwitchCase="'Product Details'" class="main__view--page">
+            <app-product [product]="currentProduct" [descriptionLenLimit]="3000"></app-product>
+        </div>
+    </section>
+</main>

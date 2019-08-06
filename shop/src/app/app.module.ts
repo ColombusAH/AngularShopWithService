@@ -8,6 +8,7 @@ import { ProductComponent } from './product/product.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { CategorySelectorComponent } from './category-selector/category-selector.component';
 import { SummaryPipe } from './summary.pipe';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SummaryPipe } from './summary.pipe';
     ProductComponent,
     SidebarMenuComponent,
     CategorySelectorComponent,
-    SummaryPipe
+    SummaryPipe,
+    ProductDetailsComponent
   ],
   imports: [BrowserModule],
   providers: [],

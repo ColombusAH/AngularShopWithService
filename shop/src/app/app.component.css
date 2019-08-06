@@ -6,7 +6,7 @@
 .img--wallBackground {
   height: 16em;
   width: 100%;
-  margin-bottom: 1.5em;
+  background-size: cover;
 }
 
 .main__view--page {

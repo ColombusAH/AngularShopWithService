@@ -8,6 +8,9 @@ export class SummaryPipe implements PipeTransform {
     if (!value) {
       return null;
     }
-    return value.substr(0, limit) + '...';
+    if (value.length > limit) {
+      return value.substr(0, limit) + '...';
+    }
+    return value.substr(0, limit);
   }
 }
