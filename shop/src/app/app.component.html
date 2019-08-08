@@ -1,4 +1,4 @@
-<main>
+<main class="appLayout--fullPage">
     <div class="headerSection--full">
         <app-header (menuBarTogglerEvent)="toggleMenuBar()"></app-header>
     </div>
@@ -7,19 +7,17 @@
     <img class="img--wallBackground" src="assets/wallBackground.jpg">
 
 
-    <section [ngSwitch]="currentPage">
+    <section class="main--Page-mainContent" [ngSwitch]="currentPage">
 
-        <div *ngSwitchCase="'Home'" class="main__view--page">
-            <div>
-                <h1>Welcome</h1>
-            </div>
+        <div *ngSwitchCase="'Home'" class="main-page">
+
+            <h1>Welcome</h1>
+
             <p>It is time to buy a watch!</p>
         </div>
 
-        <div *ngSwitchCase="'About'" class="main__view--page">
-            <div>
-                <h1>About</h1>
-            </div>
+        <div *ngSwitchCase="'About'">
+            <h1>About</h1>
             <p>
                 bla bla bla bla
                 bla bla bla bla
@@ -30,10 +28,10 @@
             </p>
         </div>
 
-        <div *ngSwitchCase="'Products'" class="main__view--page">
-            <div>
-                <h1>Buy our products</h1>
-            </div>
+        <div *ngSwitchCase="'Products'" class="main__view--page ">
+
+            <h1>Buy our products</h1>
+
             <app-category-selector [categoriesList]="categoriesList"
                 (categorySelectedEvent)="sortProductsByCategory($event)">
             </app-category-selector>
@@ -43,14 +41,14 @@
         </div>
 
         <div *ngSwitchCase="'Contact'" class="main__view--page">
-            <div>
-                <h1>Contact</h1>
-            </div>
+
+            <h1>Contact</h1>
+
         </div>
         <div *ngSwitchCase="'Product Details'" class="main__view--page">
-            <div>
-                <h1>Product Details</h1>
-            </div>
+
+            <h1>Product Details</h1>
+
             <app-product-details [product]="currentProduct" (backBtnclickedEvent)="changePage($event)">
             </app-product-details>
         </div>

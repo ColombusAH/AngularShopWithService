@@ -1,22 +1,30 @@
+.appLayout--fullPage {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  margin: 0.3em 0 0;
+  padding: 0.5em;
+}
+
 .headerSection--full {
   width: 100%;
   height: 3em;
 }
 
 .img--wallBackground {
-  height: 16em;
   width: 100%;
+  height: 16em;
   background-size: cover;
   object-fit: cover;
 }
 
-.main__view--page {
-  box-shadow: 2px 4px 8px 0 rgba(0.2, 0.2, 0.2, 0.2);
-  padding: 3em;
+.main--Page-mainContent {
+  box-shadow: 8px 4px 8px 0 rgba(0.2, 0.2, 0.2, 0.2);
+  width: 100%;
+  height: auto;
 }
 
 h1 {
-  margin: 1em 0 0.5em 0;
   color: #343434;
   font-weight: normal;
   font-family: 'Ultra', sans-serif;
