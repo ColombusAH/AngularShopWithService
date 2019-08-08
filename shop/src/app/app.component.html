@@ -13,7 +13,7 @@
             <div>
                 <h1>Welcome</h1>
             </div>
-            <p>Welcome to the best cake house in town!</p>
+            <p>It is time to buy a watch!</p>
         </div>
 
         <div *ngSwitchCase="'About'" class="main__view--page">
@@ -48,7 +48,11 @@
             </div>
         </div>
         <div *ngSwitchCase="'Product Details'" class="main__view--page">
-            <app-product [product]="currentProduct" [descriptionLenLimit]="3000"></app-product>
+            <div>
+                <h1>Product Details</h1>
+            </div>
+            <app-product-details [product]="currentProduct" (backBtnclickedEvent)="changePage('Products')">
+            </app-product-details>
         </div>
     </section>
 </main>

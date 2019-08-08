@@ -1,5 +1,5 @@
 import { Product } from './../../models/product';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-details',
@@ -8,7 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductDetailsComponent implements OnInit {
   @Input() product: Product;
+  @Output() backBtnclickedEvent = new EventEmitter();
   constructor() {}
-
+  backBtnclicked() {
+    this.backBtnclickedEvent.emit();
+  }
   ngOnInit() {}
 }

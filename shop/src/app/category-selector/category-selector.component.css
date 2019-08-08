@@ -13,22 +13,18 @@ button {
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #4caf50;
+  background-color: #2e3027;
   border: none;
   border-radius: 15px;
   box-shadow: 0 5px #999;
 }
 
-button:hover {
-  background-color: #3e8e41;
-}
-
 button:active {
-  background-color: #3e8e41;
+  background-color: #f70505;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
 button:focus {
-  background-color: aqua;
+  background-color: #f70505;
 }
