@@ -8,10 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ProductDetailsComponent implements OnInit {
   @Input() product: Product;
-  @Output() backBtnclickedEvent = new EventEmitter();
+  @Output() backBtnclickedEvent = new EventEmitter<string>();
   constructor() {}
   backBtnclicked() {
-    this.backBtnclickedEvent.emit();
+    this.backBtnclickedEvent.emit('Products');
   }
   ngOnInit() {}
 }

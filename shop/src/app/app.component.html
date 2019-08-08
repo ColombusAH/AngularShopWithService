@@ -51,7 +51,7 @@
             <div>
                 <h1>Product Details</h1>
             </div>
-            <app-product-details [product]="currentProduct" (backBtnclickedEvent)="changePage('Products')">
+            <app-product-details [product]="currentProduct" (backBtnclickedEvent)="changePage($event)">
             </app-product-details>
         </div>
     </section>
