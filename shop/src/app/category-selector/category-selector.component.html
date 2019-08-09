@@ -1,5 +1,5 @@
 <div class="categoriesContainer--flex">
-    <button *ngFor="let category of categoriesList;" class="btn"
+    <button *ngFor="let category of categoriesList;" class="btn" [class.selected]="isFirst"
         (click)="categorySelected(category)">{{category.title}}</button>
 
 </div>

@@ -9,10 +9,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class CategorySelectorComponent implements OnInit {
   @Input() categoriesList: Category[];
   @Output() categorySelectedEvent = new EventEmitter<Category>();
+  isFirst = true;
   constructor() {}
 
   categorySelected(selectedCategory: Category) {
     this.categorySelectedEvent.emit(selectedCategory);
+    this.isFirst = false;
   }
   ngOnInit() {}
 }
