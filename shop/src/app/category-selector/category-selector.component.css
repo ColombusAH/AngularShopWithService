@@ -6,7 +6,7 @@
   margin-bottom: 2em;
 }
 
-button {
+/* button {
   min-width: 20%;
   height: 3em;
   text-align: center;
@@ -27,4 +27,45 @@ button:active {
 
 button:focus {
   background-color: #f70505;
+} */
+
+.btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+/* .btn:hover,
+.btn:focus,
+.btn:active {
+  color: #fff;
+  outline: 0;
+} */
+
+.btn {
+  border-color: #8a959c;
+  color: #abb5bb;
+  box-shadow: 0 0 40px 40px #565657 inset, 0 0 0 0 #565657;
+  transition: all 150ms ease-in-out;
+}
+.btn:hover,
+.btn:focus
+ {
+  box-shadow: 0 0 10px 0 #b1c8d8 inset, 0 0 10px 4px #666869;
+  color: black;
 }

@@ -1,33 +1,31 @@
-/* .product__wrapper--flex {
+.card--vertical {
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.card__productImage {
+  flex-grow: 1;
+  padding: 6px 6px 6px;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  max-width: 50%;
 }
 
-.product__details--simpleFields {
+.product__details {
   display: flex;
   flex-direction: column;
-  padding-left: 2em;
-}
-
-.product__details--row {
-  display: flex;
-  justify-content: space-between;
-  width: 6em;
-  font-size: 2em;
-  margin-bottom: 1em;
-}
-
-img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 3em;
-  width: 50%;
+  flex-grow: 3;
+  padding-left: 1em;
+  font-size: 1em;
+  width: 100%;
+  height: auto;
 }
 
 h1 {
   color: #d54d7b;
   font-family: 'Great Vibes', cursive;
-  font-size: 5em;
+  font-size: 3em;
   line-height: 3em;
   font-weight: normal;
   margin-bottom: 0.2em;
@@ -35,12 +33,27 @@ h1 {
   text-shadow: 0 1px 1px #fff;
   padding: 0;
 }
+.card__productPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5em;
+  width: 15%;
+  font-size: 1.5em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 1em;
+}
 
 p {
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
-button {
-  width: 15%;
+.btn {
+  margin-top: auto;
+  margin-bottom: 2em;
+  min-width: 2.5em;
+  max-width: 4.5em;
   height: 3em;
   text-align: center;
   cursor: pointer;
@@ -50,10 +63,4 @@ button {
   border: none;
   border-radius: 15px;
   box-shadow: 0 5px #999;
-  margin-top: 1em;
 }
-
-button:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-} */

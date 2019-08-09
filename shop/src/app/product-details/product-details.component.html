@@ -1,14 +1,16 @@
-<main class="page--flex">
-    <img [src]="product.imageUrl" [alt]="product.title">
-    <div class="product__details--simpleFields">
+<div class="card--vertical">
+
+    <img [src]="product.imageUrl" [alt]="product.title" class="card__productImage">
+
+    <div class="product__details">
         <h1>{{product.title}}</h1>
-        <div class="product__details--row">
+        <div class="card__productPrice">
             <label for="price">Price:</label>
             <span id="price">{{product.price | currency }}</span>
         </div>
 
         <p>{{product.description}}</p>
-        <button (click)="backBtnclicked()">Back</button>
+        <button (click)="backBtnclicked()" class="btn">Back</button>
     </div>
 
-</main>
+</div>

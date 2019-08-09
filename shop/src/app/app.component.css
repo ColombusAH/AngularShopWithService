@@ -1,7 +1,6 @@
 .appLayout--fullPage {
-  width: 100%;
-  height: 100%;
-  border: 1px solid black;
+  min-width: 100vw;
+  min-height: 100vh;
   margin: 0.3em 0 0;
   padding: 0.5em;
 }
@@ -20,9 +19,14 @@
 
 .main--Page-mainContent {
   box-shadow: 8px 4px 8px 0 rgba(0.2, 0.2, 0.2, 0.2);
-  width: 100%;
-  height: auto;
+  min-width: 100vw;
+  min-height: 100vh;
 }
+
+/* .viewPage--full {
+  min-width: 100%;
+  min-height: 100%;
+} */
 
 h1 {
   color: #343434;
@@ -32,6 +36,7 @@ h1 {
   line-height: 42px;
   text-transform: uppercase;
   text-shadow: 0 2px white, 0 3px #777;
+  margin-bottom: 1em;
 }
 
 p {

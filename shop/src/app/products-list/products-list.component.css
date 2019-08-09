@@ -1,13 +1,11 @@
 .productList--flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: stretch;
+  justify-content: space-evenly;
 }
 
 app-product {
   width: 30%;
-  height: 30%;
 }
 
 @media screen and (max-width: 584px) {

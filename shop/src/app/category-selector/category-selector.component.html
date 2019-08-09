@@ -1,4 +1,5 @@
 <div class="categoriesContainer--flex">
-    <button *ngFor="let category of categoriesList" (click)="categorySelected(category)">{{category.title}}</button>
+    <button *ngFor="let category of categoriesList;" class="btn"
+        (click)="categorySelected(category)">{{category.title}}</button>
 
 </div>

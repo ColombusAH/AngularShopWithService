@@ -9,7 +9,7 @@
 
     <section class="main--Page-mainContent" [ngSwitch]="currentPage">
 
-        <div *ngSwitchCase="'Home'" class="main-page">
+        <div *ngSwitchCase="'Home'" class="viewPage--full">
 
             <h1>Welcome</h1>
 
@@ -28,7 +28,7 @@
             </p>
         </div>
 
-        <div *ngSwitchCase="'Products'" class="main__view--page ">
+        <div *ngSwitchCase="'Products'" class="viewPage--full">
 
             <h1>Buy our products</h1>
 
@@ -40,12 +40,12 @@
             </app-products-list>
         </div>
 
-        <div *ngSwitchCase="'Contact'" class="main__view--page">
+        <div *ngSwitchCase="'Contact'" class="viewPage--full">
 
             <h1>Contact</h1>
 
         </div>
-        <div *ngSwitchCase="'Product Details'" class="main__view--page">
+        <div *ngSwitchCase="'Product Details'" class="viewPage--full">
 
             <h1>Product Details</h1>
 
