@@ -2,11 +2,24 @@ import { DataLoader } from './data/dataLoader';
 import { Category } from './../models/category';
 import { Product } from './../models/product';
 import { Component, OnInit } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('changeMainView', [
+      state('change', style({ opacity: 1 })),
+      transition(':enter', [style({ opacity: 0 }), animate(1000)])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
   title = 'shop';

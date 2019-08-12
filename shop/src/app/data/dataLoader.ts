@@ -3,27 +3,6 @@ export class DataLoader {
   static productList: Product[] = [
     new Product(
       '1',
-      'assets/products/ brown-alcadus-man.jpeg',
-      'brown alcadus',
-      800,
-      'Analog brown colored watch with beautifull contour'
-    ),
-    new Product(
-      '1',
-      'assets/products/black-smart-man.jpeg',
-      'black smart',
-      1100,
-      'Digital black smart watch'
-    ),
-    new Product(
-      '1',
-      'assets/products/brown-classic-man.jpeg',
-      'classic brown',
-      1200,
-      'A classic brown design for elegant fit'
-    ),
-    new Product(
-      '1',
       'assets/products/brown-man.jpeg',
       'man brown',
       700,
@@ -119,6 +98,27 @@ export class DataLoader {
       'Wintage golden ',
       650,
       'Beautiful wintage brown golden watch '
+    ),
+    new Product(
+      '1',
+      'assets/products/ brown-alcadus-man.jpeg',
+      'brown alcadus',
+      800,
+      'Analog brown colored watch with beautifull contour'
+    ),
+    new Product(
+      '1',
+      'assets/products/black-smart-man.jpeg',
+      'black smart',
+      1100,
+      'Digital black smart watch'
+    ),
+    new Product(
+      '1',
+      'assets/products/brown-classic-man.jpeg',
+      'classic brown',
+      1200,
+      'A classic brown design for elegant fit'
     )
   ];
 

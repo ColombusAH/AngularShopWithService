@@ -1,5 +1,6 @@
 <div id="navbar" class="sidenav" [style.width]="isOpen  ? '250px': '0'">
     <a href="#" class="closebtn" (click)="closeMenuBar()">&times;</a>
+    
     <a *ngFor="let linkName  of linksNames" href="#" (click)="onLinkClicked(linkName)">{{linkName}}</a>
     <div class="navbar__socialIcon--end">
         <a href="https://www.facebook.com/" target="_blank">
