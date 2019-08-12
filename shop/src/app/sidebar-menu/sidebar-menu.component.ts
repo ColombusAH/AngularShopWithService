@@ -5,7 +5,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './sidebar-menu.component.html',
   styleUrls: ['./sidebar-menu.component.css']
 })
-export class SidebarMenuComponent implements OnInit {
+export class SidebarMenuComponent {
   @Input() isOpen: boolean;
   @Input() linksNames: string[];
   @Output() onCloseMenuBar = new EventEmitter();
@@ -19,5 +19,4 @@ export class SidebarMenuComponent implements OnInit {
     this.pageNavigaterEvent.emit(linkName);
     this.onCloseMenuBar.emit();
   }
-  ngOnInit() {}
 }

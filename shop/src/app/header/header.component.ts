@@ -5,12 +5,11 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Output() menuBarTogglerEvent = new EventEmitter();
   constructor() {}
 
   onMenuBarBtnClicked() {
     this.menuBarTogglerEvent.emit();
   }
-  ngOnInit() {}
 }

@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './category-selector.component.html',
   styleUrls: ['./category-selector.component.css']
 })
-export class CategorySelectorComponent implements OnInit {
+export class CategorySelectorComponent {
   @Input() categoriesList: Category[];
   @Output() categorySelectedEvent = new EventEmitter<Category>();
   isFirst = true;
@@ -16,5 +16,4 @@ export class CategorySelectorComponent implements OnInit {
     this.categorySelectedEvent.emit(selectedCategory);
     this.isFirst = false;
   }
-  ngOnInit() {}
 }

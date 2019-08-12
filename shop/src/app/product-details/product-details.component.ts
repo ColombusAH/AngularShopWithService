@@ -6,12 +6,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponent  {
   @Input() product: Product;
   @Output() backBtnclickedEvent = new EventEmitter<string>();
   constructor() {}
   backBtnclicked() {
     this.backBtnclickedEvent.emit('Products');
   }
-  ngOnInit() {}
 }
