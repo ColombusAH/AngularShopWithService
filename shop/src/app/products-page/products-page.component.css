@@ -1,0 +1,9 @@
+h1 {
+  color: #343434;
+  font-weight: normal;
+  font-family: 'Ultra', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-shadow: 0 2px white, 0 3px #777;
+  padding: 1em;
+}

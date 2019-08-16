@@ -9,46 +9,28 @@
 
     <section class="main--Page-mainContent" [ngSwitch]="currentPage">
 
-        <div *ngSwitchCase="'Home'" class="viewPage--full" [@changeMainView]="change">
+        <div *ngSwitchCase="'Home'" @fade>
 
-            <h1>Welcome</h1>
-
-            <p>It is time to buy a watch!</p>
+            <app-home [productList]="allProducts"></app-home>
         </div>
 
-        <div *ngSwitchCase="'About'" [@changeMainView]="change">
-            <h1>About</h1>
-            <p>
-                bla bla bla bla
-                bla bla bla bla
-                bla bla bla bla
-                bla bla bla bla
-                bla bla bla bla
-                bla bla bla bla
-            </p>
+        <div *ngSwitchCase="'About'" @fade>
+            <app-about></app-about>
         </div>
 
-        <div *ngSwitchCase="'Products'" class="viewPage--full" [@changeMainView]="change">
+        <div *ngSwitchCase="'Products'" @fade>
 
-            <h1>Buy our products</h1>
-
-            <app-category-selector [categoriesList]="categoriesList"
-                (categorySelectedEvent)="sortProductsByCategory($event)">
-            </app-category-selector>
-
-            <app-products-list [products]="productList" (onProductClicked)="productSelected($event)">
-            </app-products-list>
+            <app-products-page [allProducts]="allProducts" [categoriesList]="categoriesList"
+                (productSelectedEvent)="productSelected($event)">
+            </app-products-page>
         </div>
 
-        <div *ngSwitchCase="'Contact'" class="viewPage--full" [@changeMainView]="change">
+        <div *ngSwitchCase="'Contact'" @fade>
 
-            <h1>Contact</h1>
+            <app-contact-page></app-contact-page>
 
         </div>
-        <div *ngSwitchCase="'Product Details'" class="viewPage--full" [@changeMainView]="change">
-
-            <h1>Product Details</h1>
-
+        <div *ngSwitchCase="'Product Details'" @fade>
             <app-product-details [product]="currentProduct" (backBtnclickedEvent)="changePage($event)">
             </app-product-details>
         </div>

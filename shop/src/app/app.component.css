@@ -8,6 +8,8 @@
 .headerSection--full {
   width: 100%;
   height: 3em;
+  position: fixed;
+  top: 0;
 }
 
 .img--wallBackground {
@@ -23,20 +25,15 @@
   min-height: 100vh;
 }
 
-/* .viewPage--full {
-  min-width: 100%;
-  min-height: 100%;
-} */
-
 h1 {
   color: #343434;
   font-weight: normal;
   font-family: 'Ultra', sans-serif;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 5rem;
   text-transform: uppercase;
   text-shadow: 0 2px white, 0 3px #777;
-  margin-bottom: 1em;
+  padding: 1em;
+  text-align: center;
 }
 
 p {

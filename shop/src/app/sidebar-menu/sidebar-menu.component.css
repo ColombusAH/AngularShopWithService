@@ -46,12 +46,12 @@
   padding-left: 1em;
 }
 
-.navbar__socialIcon--end img {
+.image--link {
   border-radius: 60%;
-  height: 40%;
-  width: 40%;
+  height: 11%;
+  width: 11%;
 }
-.navbar__socialIcon--end a {
+.alink {
   margin: 0;
   padding: 0;
 }
