@@ -10,7 +10,6 @@
     <section class="main--Page-mainContent" [ngSwitch]="currentPage">
 
         <div *ngSwitchCase="'Home'" @fade>
-
             <app-home [productList]="allProducts"></app-home>
         </div>
 
@@ -19,20 +18,19 @@
         </div>
 
         <div *ngSwitchCase="'Products'" @fade>
-
             <app-products-page [allProducts]="allProducts" [categoriesList]="categoriesList"
                 (productSelectedEvent)="productSelected($event)">
             </app-products-page>
         </div>
 
         <div *ngSwitchCase="'Contact'" @fade>
-
             <app-contact-page></app-contact-page>
-
         </div>
+
         <div *ngSwitchCase="'Product Details'" @fade>
             <app-product-details [product]="currentProduct" (backBtnclickedEvent)="changePage($event)">
             </app-product-details>
         </div>
+
     </section>
 </main>

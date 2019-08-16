@@ -7,7 +7,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductComponent } from './product/product.component';
 import { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component';
 import { CategorySelectorComponent } from './category-selector/category-selector.component';
-import { SummaryPipe } from './summary.pipe';
+import { SummaryPipe } from './pipes/summary.pipe';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { HomeComponent } from './home-page/home.component';
