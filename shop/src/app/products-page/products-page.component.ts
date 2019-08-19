@@ -16,7 +16,7 @@ export class ProductsPageComponent implements OnInit {
   constructor() {}
 
   sortProductsByCategory(category: Category) {
-    this.productList = Object.assign([], this.allProducts);
+    this.productList = [...this.allProducts];
     if (category.title.toLowerCase() !== 'all') {
       this.productList = this.productList.filter(
         p => p.categoryId.localeCompare(category.id) === 0

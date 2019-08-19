@@ -1,3 +1,4 @@
+import { ProductsService } from './services/products.service';
 import { DataLoader } from './data/dataLoader';
 import { Category } from './../models/category';
 import { Product } from './../models/product';
@@ -27,6 +28,8 @@ export class AppComponent implements OnInit {
   categoriesList: Category[];
   pagesNames = [Page.Home, Page.About, Page.Products, Page.Contact];
 
+  constructor(private productService: ProductsService) {}
+
   toggleMenuBar() {
     this.menubarMode = !this.menubarMode;
   }
@@ -39,7 +42,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.allProducts = DataLoader.loadProducts();
+    this.allProducts = this.productService.getAllProducts();
     this.categoriesList = DataLoader.loadCategories();
   }
 }

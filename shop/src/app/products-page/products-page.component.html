@@ -4,6 +4,6 @@
     <app-category-selector [categoriesList]="categoriesList" (categorySelectedEvent)="sortProductsByCategory($event)">
     </app-category-selector>
 
-    <app-products-list [products]="productList" (onProductClicked)="productSelected($event)">
+    <app-products-list [products]="productList" (onProductClickedEvent)="productSelected($event)">
     </app-products-list>
 </div>

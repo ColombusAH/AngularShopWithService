@@ -9,6 +9,7 @@
   height: 3em;
   position: fixed;
   top: 0;
+  z-index: 2;
 }
 
 .img--wallBackground {
@@ -22,6 +23,7 @@
   box-shadow: 8px 4px 8px 0 rgba(0.2, 0.2, 0.2, 0.2);
   min-width: 100vw;
   min-height: 100vh;
+  z-index: 0;
 }
 
 h1 {

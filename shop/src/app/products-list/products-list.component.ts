@@ -10,10 +10,10 @@ import { fade } from '../animations';
 })
 export class ProductsListComponent {
   @Input() products: Product[];
-  @Output() onProductClicked = new EventEmitter<Product>();
+  @Output() onProductClickedEvent = new EventEmitter<Product>();
   constructor() {}
 
   productClicked(product: Product) {
-    this.onProductClicked.emit(product);
+    this.onProductClickedEvent.emit(product);
   }
 }
