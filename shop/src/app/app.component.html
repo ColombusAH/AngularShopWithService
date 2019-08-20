@@ -18,8 +18,7 @@
         </div>
 
         <div *ngSwitchCase="'Products'" @fade>
-            <app-products-page [allProducts]="allProducts" [categoriesList]="categoriesList"
-                (productSelectedEvent)="productSelected($event)">
+            <app-products-page [categoriesList]="categoriesList" (productSelectedEvent)="productSelected($event)">
             </app-products-page>
         </div>
 

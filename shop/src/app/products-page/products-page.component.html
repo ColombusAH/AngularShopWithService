@@ -1,9 +1,9 @@
 <div class="container">
     <h1>Buy our products</h1>
 
-    <app-category-selector [categoriesList]="categoriesList" (categorySelectedEvent)="sortProductsByCategory($event)">
+    <app-category-selector [categoriesList]="categoriesList" (categorySelectedEvent)="categorySelected($event)">
     </app-category-selector>
 
-    <app-products-list [products]="productList" (onProductClickedEvent)="productSelected($event)">
+    <app-products-list [products]="productList" (onProductSelectedEvent)="productSelected($event)">
     </app-products-list>
 </div>

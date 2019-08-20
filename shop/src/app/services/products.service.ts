@@ -127,7 +127,7 @@ export class ProductsService {
       'A classic brown design for elegant fit'
     )
   ];
-  constructor() {
+  constructor() { 
     console.log('service created');
     
   }
