@@ -3,7 +3,7 @@ import { DataLoader } from './data/dataLoader';
 import { Category } from './../models/category';
 import { Product } from './../models/product';
 import { Component, OnInit } from '@angular/core';
-import { fade } from './animations';
+import { fade } from './animations/fade.animation';
 
 enum Page {
   Home = 'Home',

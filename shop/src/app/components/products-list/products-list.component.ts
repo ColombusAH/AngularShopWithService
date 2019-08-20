@@ -1,6 +1,6 @@
-import { Product } from './../../models/product';
+import { Product } from '../../../models/product';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { fade } from '../animations';
+import { fade } from '../../animations/fade.animation';
 
 @Component({
   selector: 'app-products-list',
