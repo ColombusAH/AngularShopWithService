@@ -127,9 +127,8 @@ export class ProductsService {
       'A classic brown design for elegant fit'
     )
   ];
-  constructor() { 
+  constructor() {
     console.log('service created');
-    
   }
   getAllProducts(): Product[] {
     return this.productList;
@@ -141,5 +140,6 @@ export class ProductsService {
         p => p.categoryId.localeCompare(category.id) === 0
       );
     }
+    return this.getAllProducts();
   }
 }

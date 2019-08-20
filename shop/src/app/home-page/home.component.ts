@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { ProductsService } from './../services/products.service';
+import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/models/product';
 
 @Component({
@@ -7,9 +8,11 @@ import { Product } from 'src/models/product';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @Input() productList: Product[];
+   productList: Product[];
 
-  constructor() {}
+  constructor(private productService: ProductsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.productList = this.productService.getAllProducts();
+  }
 }
