@@ -10,10 +10,10 @@ import { CategorySelectorComponent } from './category-selector/category-selector
 import { SummaryPipe } from './pipes/summary.pipe';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
-import { HomeComponent } from './home-page/home.component';
-import { AboutComponent } from './about-page/about.component';
-import { ProductsPageComponent } from './products-page/products-page.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
+import { HomeComponent } from './pages/home-page/home.component';
+import { AboutComponent } from './pages/about-page/about.component';
+import { ProductsPageComponent } from './pages/products-page/products-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { SocialLinkComponent } from './social-link/social-link.component';
 
 @NgModule({

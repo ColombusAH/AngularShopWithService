@@ -24,11 +24,10 @@ export class AppComponent implements OnInit {
   currentPage: Page = Page.Home;
   currentProduct: Product = null;
   menubarMode: boolean = false;
-  allProducts: Product[];
   categoriesList: Category[];
   pagesNames = [Page.Home, Page.About, Page.Products, Page.Contact];
 
-  constructor(private productService: ProductsService) {}
+  constructor() {}
 
   toggleMenuBar() {
     this.menubarMode = !this.menubarMode;
@@ -42,7 +41,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.allProducts = this.productService.getAllProducts();
     this.categoriesList = DataLoader.loadCategories();
   }
 }
