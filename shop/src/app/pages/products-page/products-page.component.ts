@@ -1,7 +1,8 @@
 import { ProductsService } from '../../services/products.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from 'src/models/product';
-import { Category } from 'src/models/category';
+import { Product } from 'src/app/models/product.model';
+import { Category } from 'src/app/models/category.model';
+
 
 @Component({
   selector: 'app-products-page',

@@ -1,6 +1,6 @@
+import { Product } from '../models/product.model';
+import { Category } from '../models/category.model';
 
-import { Product } from './../../models/product';
-import { Category } from 'src/models/category';
 export class DataLoader {
          static productList: Product[] = [
            new Product(
