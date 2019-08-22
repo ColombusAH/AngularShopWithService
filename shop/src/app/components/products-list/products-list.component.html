@@ -1,5 +1,5 @@
 <div class="productList--flex">
     <app-product *ngFor="let p of products" [product]="p" (productclickedEvent)="productClicked(p)" @fade>
-        <app-shoping-icons [product]=p></app-shoping-icons>
+        <app-shoping-icons [product]="p"></app-shoping-icons>
     </app-product>
 </div>
