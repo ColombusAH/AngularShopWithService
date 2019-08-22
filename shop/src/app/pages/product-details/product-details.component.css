@@ -1,66 +1,58 @@
-.card--vertical {
+.cartIcon {
+  cursor: pointer;
+}
+
+.right {
+  margin-right: 0.3em;
+}
+
+.icons__container {
+  margin-left: auto;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 6px 6px 6px;
+  background-color: white;
+}
+
+.card__productImage {
+  width: 100%;
+  height: 40%;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 2px 0 2px 0;
+  font-size: 1.2em;
+}
+
+.container--page {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-.card__productImage {
-  flex-grow: 1;
-  padding: 6px 6px 6px;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
-  max-width: 50%;
-}
-
-.product__details {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 3;
-  padding-left: 1em;
-  font-size: 1em;
-  width: 100%;
-  height: auto;
-}
 
 h1 {
-  color: #d54d7b;
-  font-family: 'Great Vibes', cursive;
-  font-size: 3em;
-  line-height: 3em;
-  font-weight: normal;
-  margin-bottom: 0.2em;
-  text-align: center;
-  text-shadow: 0 1px 1px #fff;
-  padding: 0;
+  font-size: 2em;
 }
-.card__productPrice {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5em;
-  width: 15%;
-  font-size: 1.5em;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin-left: 1em;
+h2 {
+  font-size: 1.3em;
 }
 
-p {
-  font-size: 1.3em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-bottom: 1em;
-  margin-left: 1em;
+.containerPrice {
+  display: flex;
+  justify-content: space-between;
 }
+
 .btn {
-  margin-top: auto;
-  margin-bottom: 2em;
-  min-width: 2.5em;
-  max-width: 4.5em;
+  border-radius: 30%;
+  color: rgb(1, 155, 216);
+  border-color: rgb(1, 155, 216);
+  background-color: rgb(191, 197, 197);
+  width: 8em;
   height: 3em;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #2e3027;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 5px #999;
+  margin-left: 1em;
 }

@@ -1,6 +1,6 @@
 <main class="appLayout--fullPage">
     <div class="headerSection--full">
-        <app-header (menuBarTogglerEvent)="toggleMenuBar()"></app-header>
+        <app-header (menuBarTogglerEvent)="toggleMenuBar()" (pageNavigaterEvent)="changePage($event)"></app-header>
     </div>
     <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"
         (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames"></app-sidebar-menu>
@@ -31,5 +31,8 @@
             </app-product-details>
         </div>
 
+        <div *ngSwitchCase="'Cart'" @fade>
+            <app-cart-page></app-cart-page>
+        </div>
     </section>
 </main>

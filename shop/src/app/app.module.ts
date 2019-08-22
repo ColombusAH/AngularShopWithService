@@ -15,6 +15,8 @@ import { AboutComponent } from './pages/about-page/about.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { SocialLinkComponent } from './components/social-link/social-link.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +33,10 @@ import { SocialLinkComponent } from './components/social-link/social-link.compon
     AboutComponent,
     ProductsPageComponent,
     ContactPageComponent,
-    SocialLinkComponent
+    SocialLinkComponent,
+    CartPageComponent
   ],
-  imports: [BrowserModule, BrowserAnimationsModule],
+  imports: [BrowserModule, BrowserAnimationsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -7,20 +7,34 @@ import * as _ from 'lodash';
   providedIn: 'root'
 })
 export class CartService {
-  private shoppingList: ProductItem[] = [];
-  constructor() {}
+  private shopingList: ProductItem[] = [];
+  constructor() {
+    console.log('cart service created');
+  }
 
   addProduct(product: Product) {
     //for now compared with ref , should compare with id when using real data.
-    const index = _.findIndex(this.shoppingList, pi => pi.prodcut === product);
+    const index = _.findIndex(this.shopingList, pi => pi.prodcut === product);
     if (index === -1) {
-      this.shoppingList.push(new ProductItem(product));
+      this.shopingList.push(new ProductItem(product));
     } else {
-      this.shoppingList[index].quantity += 1;
+      this.shopingList[index].quantity += 1;
     }
   }
 
   removeProduct(product: Product) {
-    _.remove(this.shoppingList, pi => pi.prodcut === product);
+    const index = _.findIndex(this.shopingList, pi => pi.prodcut == product);
+    if (index !== -1) {
+      this.shopingList[index].quantity -= 1;
+      if (this.shopingList[index].quantity === 0) {
+        _.remove(this.shopingList, pi => pi.prodcut === product);
+      }
+    }
+  }
+
+  shopingListSize() {
+    let size = 0;
+    _.forEach(this.shopingList, pi => (size += pi.quantity));
+    return size;
   }
 }

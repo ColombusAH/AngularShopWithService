@@ -20,7 +20,7 @@ export class ProductsService {
       'assets/products/elegant-black.jpeg',
       'elegant black',
       500,
-      'JElegant black solid watch '
+      'Elegant black solid watch '
     ),
     new Product(
       '1',

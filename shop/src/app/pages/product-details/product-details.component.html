@@ -1,18 +1,25 @@
 <h1>Product Details</h1>
 
-<div class="card--vertical">
+<div class="container--page">
+    <div class="card">
+        <img [src]="product.imageUrl" [alt]="product.title" class="card__productImage">
+        <div class="container">
+            <h2><b>{{product.title | titlecase}}</b></h2>
+            <p>{{product.description}}</p>
+            <div class="containerPrice">
+                <label for="price">Price: </label>
+                <span id="price">{{product.price | currency }}</span>
+                <div class="icons__container">
+                    <img src="assets/cartIcons/cartDown.png" alt="cartDown" class="cartIcon right"
+                        (click)="addToCart()">
+                    <img src="assets/cartIcons/cartUp.png" alt="cartUp" class="catIcon" (click)="removeFromCart()">
+                </div>
+            </div>
 
-    <img [src]="product.imageUrl" [alt]="product.title" class="card__productImage">
-
-    <div class="product__details">
-        <h1>{{product.title}}</h1>
-        <div class="card__productPrice">
-            <label for="price">Price:</label>
-            <span id="price">{{product.price | currency }}</span>
         </div>
-
-        <p>{{product.description}}</p>
-        <button (click)="backBtnclicked()" class="btn">Back</button>
     </div>
 
 </div>
+
+
+<button (click)="backBtnclicked()" class="btn">Back</button>
