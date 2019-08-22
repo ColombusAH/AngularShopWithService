@@ -9,11 +9,7 @@
             <div class="containerPrice">
                 <label for="price">Price: </label>
                 <span id="price">{{product.price | currency }}</span>
-                <div class="icons__container">
-                    <img src="assets/cartIcons/cartDown.png" alt="cartDown" class="cartIcon right"
-                        (click)="addToCart()">
-                    <img src="assets/cartIcons/cartUp.png" alt="cartUp" class="catIcon" (click)="removeFromCart()">
-                </div>
+                <app-shoping-icons [product]="product"></app-shoping-icons>
             </div>
 
         </div>
