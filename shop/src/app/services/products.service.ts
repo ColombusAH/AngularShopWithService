@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 import { Category } from '../models/category.model';
-
+import { DataLoader } from '../data/dataLoader';
 
 @Injectable({
   providedIn: 'root'
@@ -128,6 +128,15 @@ export class ProductsService {
       'A classic brown design for elegant fit'
     )
   ];
+
+  private categoriesList: Category[] = [
+    new Category('0', 'All'),
+    new Category('1', 'man'),
+    new Category('2', 'woman')
+  ];
+  getAllCategories() {
+    return this.categoriesList;
+  }
   constructor() {
     console.log('service created');
   }

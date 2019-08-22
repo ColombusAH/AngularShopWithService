@@ -3,7 +3,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { Category } from 'src/app/models/category.model';
 
-
 @Component({
   selector: 'app-products-page',
   templateUrl: './products-page.component.html',
@@ -11,7 +10,7 @@ import { Category } from 'src/app/models/category.model';
 })
 export class ProductsPageComponent implements OnInit {
   @Output() productSelectedEvent = new EventEmitter<Product>();
-  @Input() categoriesList: Category[];
+  categoriesList: Category[];
   productList: Product[];
 
   constructor(private productsService: ProductsService) {}
@@ -24,5 +23,6 @@ export class ProductsPageComponent implements OnInit {
   }
   ngOnInit() {
     this.productList = this.productsService.getAllProducts();
+    this.categoriesList = this.productsService.getAllCategories();
   }
 }

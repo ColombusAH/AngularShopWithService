@@ -1,5 +1,4 @@
-import { DataLoader } from './data/dataLoader';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { fade } from './animations/fade.animation';
 import { Product } from './models/product.model';
 import { Category } from './models/category.model';
@@ -18,7 +17,7 @@ enum Page {
   styleUrls: ['./app.component.css'],
   animations: [fade]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'shop';
   currentPage: Page = Page.Home;
   currentProduct: Product = null;
@@ -37,9 +36,5 @@ export class AppComponent implements OnInit {
   productSelected(product: Product) {
     this.currentProduct = product;
     this.currentPage = Page.ProductDetails;
-  }
-
-  ngOnInit(): void {
-    this.categoriesList = DataLoader.loadCategories();
   }
 }
