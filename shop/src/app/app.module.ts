@@ -17,6 +17,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { SocialLinkComponent } from './components/social-link/social-link.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
+import { ShopingIconsComponent } from './components/shoping-icons/shoping-icons.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
     ProductsPageComponent,
     ContactPageComponent,
     SocialLinkComponent,
-    CartPageComponent
+    CartPageComponent,
+    ShopingIconsComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FontAwesomeModule],
   providers: [],

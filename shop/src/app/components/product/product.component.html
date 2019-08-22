@@ -1,6 +1,7 @@
 <div class="card">
-    <img [src]="product.imageUrl" alt="product" class="card__productImage">
+    <img [src]="product.imageUrl" alt="product" class="card__productImage" (click)="productClicked()">
     <div class="card__title--top-left">{{product.title}}</div>
     <div class="card__title--top-right">{{product.price | currency }}</div>
     <p class="car__description">{{product.description | summary}}</p>
+    <ng-content class="content"></ng-content>
 </div>
