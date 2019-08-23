@@ -42,7 +42,7 @@ h2 {
   font-size: 1.3em;
 }
 
-.containerPrice {
+.container--row {
   display: flex;
   justify-content: space-between;
 }

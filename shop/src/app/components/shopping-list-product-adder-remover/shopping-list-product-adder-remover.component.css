@@ -1,0 +1,8 @@
+.cartIcon {
+  cursor: pointer;
+}
+
+.icons__container {
+  display: flex;
+  justify-content: flex-end;
+}

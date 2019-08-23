@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { CartService } from './services/cart.service';
+import { Component, OnInit } from '@angular/core';
 import { fade } from './animations/fade.animation';
 import { Product } from './models/product.model';
 import { Category } from './models/category.model';
@@ -17,15 +18,14 @@ enum Page {
   styleUrls: ['./app.component.css'],
   animations: [fade]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'shop';
   currentPage: Page = Page.Home;
   currentProduct: Product = null;
   menubarMode: boolean = false;
-  categoriesList: Category[];
   pagesNames = [Page.Home, Page.About, Page.Products, Page.Contact];
-
-  constructor() {}
+  cartSize: number;
+  constructor(private cartService: CartService) {}
 
   toggleMenuBar() {
     this.menubarMode = !this.menubarMode;
@@ -36,5 +36,9 @@ export class AppComponent {
   productSelected(product: Product) {
     this.currentProduct = product;
     this.currentPage = Page.ProductDetails;
+  }
+
+  ngOnInit(): void {
+    this.cartSize = this.cartService.shopingListSize();
   }
 }

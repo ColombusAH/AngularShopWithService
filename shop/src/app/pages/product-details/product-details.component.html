@@ -6,10 +6,12 @@
         <div class="container">
             <h2><b>{{product.title | titlecase}}</b></h2>
             <p>{{product.description}}</p>
-            <div class="containerPrice">
-                <label for="price">Price: </label>
-                <span id="price">{{product.price | currency }}</span>
-                <app-shoping-icons [product]="product"></app-shoping-icons>
+            <div class="container--row">
+                <div class="container__price">
+                    <label for="price">Price: </label>
+                    <span id="price">{{product.price | currency }}</span>
+                </div>
+                <app-shopping-list-product-adder-remover [product]="product"></app-shopping-list-product-adder-remover>
             </div>
 
         </div>
