@@ -7,7 +7,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent {
-  constructor(private cartService: CartService) {
-    console.log(cartService.shopingList[0].product.imageUrl);
-  }
+  constructor(private cartService: CartService) {}
 }

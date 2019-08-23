@@ -108,7 +108,7 @@ export class ProductsService {
     ),
     new Product(
       '1',
-      'assets/products/ brown-alcadus-man.jpeg',
+      'assets/products/brown-alcadus-man.jpeg',
       'brown alcadus',
       800,
       'Analog brown colored watch with beautifull contour'

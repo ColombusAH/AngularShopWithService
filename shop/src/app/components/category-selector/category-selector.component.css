@@ -38,5 +38,5 @@
 .btn:focus,
 .selected {
   box-shadow: 0 0 10px 0 #b1c8d8 inset, 0 0 10px 4px #666869;
-  color: black;
+  color: white;
 }

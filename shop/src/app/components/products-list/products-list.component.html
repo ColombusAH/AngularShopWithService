@@ -1,5 +1,7 @@
 <div class="productList--flex">
     <app-product *ngFor="let p of products" [product]="p" (productclickedEvent)="productClicked(p)" @fade>
-        <app-shopping-list-product-adder-remover [product]="p"></app-shopping-list-product-adder-remover>
+        <div class="container__icon--righted">
+            <app-shopping-list-product-adder-remover [product]="p"></app-shopping-list-product-adder-remover>
+        </div>
     </app-product>
 </div>
