@@ -1,7 +1,7 @@
 <div id="navbar" class="sidenav" [style.width]="isOpen  ? '250px': '0'">
     <a href="#" class="closebtn" (click)="closeMenuBar()">&times;</a>
 
-    <a *ngFor="let linkName  of linksNames" href="#" (click)="onLinkClicked(linkName)">{{linkName}}</a>
+    <a *ngFor="let linkName  of linksNames;first as isFirst" href="#" (click)="onLinkClicked(linkName)">{{linkName}}</a>
     <a href="#" class="haveBadge" [(attr.value)]="cartSize" (click)="onLinkClicked('Cart')">Cart</a>
 
     <div class="navbar__socialIcon--end">

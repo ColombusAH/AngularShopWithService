@@ -8,10 +8,15 @@ import * as _ from 'lodash';
 })
 export class CartService {
   private _shopingList: ProductItem[] = [];
-  constructor() {}
+  private _totalPrice: number = 0;
+  constructor() {
+    console.log('cart');
+    
+  }
 
   addProduct(product: Product) {
     //for now compared with ref , should compare with id when using real data.
+    this._totalPrice += product.price;
     const index = _.findIndex(this._shopingList, pi => pi.product === product);
     if (index === -1) {
       this._shopingList.push(new ProductItem(product));
@@ -23,6 +28,7 @@ export class CartService {
   removeProduct(product: Product) {
     const index = _.findIndex(this._shopingList, pi => pi.product == product);
     if (index !== -1) {
+      this._totalPrice -= product.price;
       this._shopingList[index].quantity -= 1;
       if (this._shopingList[index].quantity === 0) {
         _.remove(this._shopingList, pi => pi.product === product);
@@ -49,12 +55,9 @@ export class CartService {
     }
   }
 
-  geTtotalPrice() {
-    let total = 0;
-    _.forEach(
-      this._shopingList,
-      pi => (total += pi.quantity * pi.product.price)
-    );
-    return total;
+  
+  public  getTotalPrice() : number {
+    return this._totalPrice;
   }
+  
 }
