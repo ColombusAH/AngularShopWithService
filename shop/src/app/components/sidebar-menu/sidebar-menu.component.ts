@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -10,8 +10,8 @@ export class SidebarMenuComponent {
   @Input() linksNames: string[];
   @Output() onCloseMenuBar = new EventEmitter();
   @Output() pageNavigaterEvent = new EventEmitter<string>();
+  @Input() cartSize: number = 0;
 
-  constructor() {}
   closeMenuBar() {
     this.onCloseMenuBar.emit();
   }

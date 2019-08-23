@@ -2,6 +2,7 @@
     <a href="#" class="closebtn" (click)="closeMenuBar()">&times;</a>
 
     <a *ngFor="let linkName  of linksNames" href="#" (click)="onLinkClicked(linkName)">{{linkName}}</a>
+    <a href="#" class="haveBadge" [(attr.value)]="cartSize" (click)="onLinkClicked('Cart')">Cart</a>
 
     <div class="navbar__socialIcon--end">
         <app-social-link>

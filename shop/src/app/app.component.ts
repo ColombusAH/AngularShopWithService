@@ -18,13 +18,12 @@ enum Page {
   styleUrls: ['./app.component.css'],
   animations: [fade]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'shop';
   currentPage: Page = Page.Home;
   currentProduct: Product = null;
   menubarMode: boolean = false;
   pagesNames = [Page.Home, Page.About, Page.Products, Page.Contact];
-  cartSize: number;
   constructor(private cartService: CartService) {}
 
   toggleMenuBar() {
@@ -36,9 +35,5 @@ export class AppComponent implements OnInit {
   productSelected(product: Product) {
     this.currentProduct = product;
     this.currentPage = Page.ProductDetails;
-  }
-
-  ngOnInit(): void {
-    this.cartSize = this.cartService.shopingListSize();
   }
 }

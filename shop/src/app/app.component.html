@@ -1,9 +1,11 @@
 <main class="appLayout--fullPage">
     <div class="headerSection--full">
-        <app-header (menuBarTogglerEvent)="toggleMenuBar()" (pageNavigaterEvent)="changePage($event)"></app-header>
+        <app-header (menuBarTogglerEvent)="toggleMenuBar()" (pageNavigaterEvent)="changePage($event)"
+            [cartSize]="cartService.shopingListSize()"></app-header>
     </div>
     <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"
-        (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames"></app-sidebar-menu>
+        (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames" [cartSize]="cartService.shopingListSize()">
+    </app-sidebar-menu>
     <img class="img--wallBackground" src="assets/wallBackground.jpg">
 
 

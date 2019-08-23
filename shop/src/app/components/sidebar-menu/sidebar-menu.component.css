@@ -64,3 +64,17 @@
     font-size: 18px;
   }
 }
+
+
+.haveBadge:after{
+content:attr(value);
+font-size:20px;
+background: wheat;
+border-radius:99px;
+padding:0px 5px 0 5px;
+position:relative;
+left:5px;
+top:-2px;
+opacity:0.9;
+
+}
