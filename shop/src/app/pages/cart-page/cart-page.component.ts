@@ -1,3 +1,4 @@
+import { CartService } from 'src/app/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css']
 })
-export class CartPageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class CartPageComponent {
+  constructor(private cartService: CartService) {
+    console.log(cartService.shopingList[0].product.imageUrl);
   }
-
 }

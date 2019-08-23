@@ -1,1 +1,5 @@
-<p>cart-page works!</p>
+<div class="card--vertical" *ngFor="let pi of cartService.shopingList">
+    <div class="wrapper__img--small">
+        <img [src]="pi.product.imageUrl" alt="" class="card__productImage">
+    </div>
+</div>

@@ -17,7 +17,6 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { SocialLinkComponent } from './components/social-link/social-link.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
-import { ShopingIconsComponent } from './components/shoping-icons/shoping-icons.component';
 import { ShoppingListProductAdderRemoverComponent } from './components/shopping-list-product-adder-remover/shopping-list-product-adder-remover.component';
 
 @NgModule({
@@ -37,7 +36,6 @@ import { ShoppingListProductAdderRemoverComponent } from './components/shopping-
     ContactPageComponent,
     SocialLinkComponent,
     CartPageComponent,
-    ShopingIconsComponent,
     ShoppingListProductAdderRemoverComponent
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FontAwesomeModule],

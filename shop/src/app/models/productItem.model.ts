@@ -1,4 +1,4 @@
 import { Product } from './product.model';
 export class ProductItem {
-  constructor(public prodcut: Product, public quantity: number = 1) {}
+  constructor(public product: Product, public quantity: number = 1) {}
 }
