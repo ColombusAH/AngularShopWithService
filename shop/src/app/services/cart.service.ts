@@ -10,14 +10,13 @@ export class CartService {
   private _shopingList: ProductItem[] = [];
   private _totalPrice: number = 0;
   constructor() {
-    console.log('cart');
     
   }
 
   addProduct(product: Product) {
     //for now compared with ref , should compare with id when using real data.
     this._totalPrice += product.price;
-    const index = _.findIndex(this._shopingList, pi => pi.product === product);
+    const index = _.findIndex(this._shopingList, pi => pi.product.id === product.id);
     if (index === -1) {
       this._shopingList.push(new ProductItem(product));
     } else {
@@ -26,12 +25,12 @@ export class CartService {
   }
 
   removeProduct(product: Product) {
-    const index = _.findIndex(this._shopingList, pi => pi.product == product);
+    const index = _.findIndex(this._shopingList, pi => pi.product.id === product.id);
     if (index !== -1) {
       this._totalPrice -= product.price;
       this._shopingList[index].quantity -= 1;
       if (this._shopingList[index].quantity === 0) {
-        _.remove(this._shopingList, pi => pi.product === product);
+        _.remove(this._shopingList, pi => pi.product.id === product.id);
       }
     }
   }
@@ -47,7 +46,7 @@ export class CartService {
   }
 
   getQuantityInShopingList(prodduct: Product) {
-    const index = this.shopingList.findIndex(pi => prodduct === pi.product);
+    const index = this.shopingList.findIndex(pi => prodduct.id === pi.product.id);
     if (index === -1) {
       return 0;
     } else {

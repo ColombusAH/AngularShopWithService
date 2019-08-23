@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 import { Category } from '../models/category.model';
-import { DataLoader } from '../data/dataLoader';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +18,14 @@ export class ProductsService {
     this._productList = [
       new Product(
         '1',
+        '1',
         'assets/products/brown-man.jpeg',
         'man brown',
         700,
         'Brown fancy watch for special dinner'
       ),
       new Product(
+        '2',
         '1',
         'assets/products/elegant-black.jpeg',
         'elegant black',
@@ -32,6 +33,7 @@ export class ProductsService {
         'Elegant black solid watch '
       ),
       new Product(
+        '3',
         '1',
         'assets/products/gold-man.jpeg',
         'golden',
@@ -39,6 +41,7 @@ export class ProductsService {
         'Beautiful Golden watch aviation style'
       ),
       new Product(
+        '4',
         '1',
         'assets/products/guess-man.jpeg',
         'Guess',
@@ -46,6 +49,7 @@ export class ProductsService {
         'Beautiful Guess watch '
       ),
       new Product(
+        '5',
         '1',
         'assets/products/silver-geneva-man.jpeg',
         'Geneva watch',
@@ -53,6 +57,7 @@ export class ProductsService {
         'beautiful silver watch from Geneva'
       ),
       new Product(
+        '6',
         '1',
         'assets/products/silver-man.jpeg',
         'Omega silver',
@@ -60,6 +65,7 @@ export class ProductsService {
         'Omega silver Omega watch '
       ),
       new Product(
+        '7',
         '2',
         'assets/products/black-teenager-woman.jpeg',
         'Teenager watch',
@@ -67,6 +73,7 @@ export class ProductsService {
         'Teenager fancy watch '
       ),
       new Product(
+        '8',
         '2',
         'assets/products/brown-classic-woman.jpeg',
         'Brown classic woman watch',
@@ -74,6 +81,7 @@ export class ProductsService {
         'Beautiful brown classic simple watch  '
       ),
       new Product(
+        '9',
         '2',
         'assets/products/classic-analogg-woman.jpeg',
         'Ligth brown woman watch',
@@ -81,6 +89,7 @@ export class ProductsService {
         'Analog watch with light brown color '
       ),
       new Product(
+        '10',
         '2',
         'assets/products/digital-rose-gold-woman.jpeg',
         'Rose golden digatl watch',
@@ -88,6 +97,7 @@ export class ProductsService {
         'Beautiful rose golden  watch for woman '
       ),
       new Product(
+        '11',
         '2',
         'assets/products/gloden-diamant-woman.jpeg',
         'Golden Diamant',
@@ -95,6 +105,7 @@ export class ProductsService {
         'Perfect golden diamant watch  '
       ),
       new Product(
+        '12',
         '2',
         'assets/products/gloden-woman.jpeg',
         'Golden watch ',
@@ -102,6 +113,7 @@ export class ProductsService {
         'Golden elegant woman watch  '
       ),
       new Product(
+        '13',
         '2',
         'assets/products/golden-white-woman.jpeg',
         'Golden white',
@@ -109,6 +121,7 @@ export class ProductsService {
         'Golden white analog watch form woman'
       ),
       new Product(
+        '14',
         '2',
         'assets/products/vintage-woman.jpeg',
         'Wintage golden ',
@@ -116,6 +129,7 @@ export class ProductsService {
         'Beautiful wintage brown golden watch '
       ),
       new Product(
+        '15',
         '1',
         'assets/products/brown-alcadus-man.jpeg',
         'brown alcadus',
@@ -123,6 +137,7 @@ export class ProductsService {
         'Analog brown colored watch with beautifull contour'
       ),
       new Product(
+        '16',
         '1',
         'assets/products/black-smart-man.jpeg',
         'black smart',
@@ -130,6 +145,7 @@ export class ProductsService {
         'Digital black smart watch'
       ),
       new Product(
+        '17',
         '1',
         'assets/products/brown-classic-man.jpeg',
         'classic brown',
