@@ -6,29 +6,6 @@
   margin-bottom: 2em;
 }
 
-/* button {
-  min-width: 20%;
-  height: 3em;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #2e3027;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 5px #999;
-}
-
-button:active {
-  background-color: #f70505;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-button:focus {
-  background-color: #f70505;
-} */
-
 .btn {
   box-sizing: border-box;
   appearance: none;
@@ -50,12 +27,6 @@ button:focus {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
-/* .btn:hover,
-.btn:focus,
-.btn:active {
-  color: #fff;
-  outline: 0;
-} */
 
 .btn {
   border-color: #8a959c;
