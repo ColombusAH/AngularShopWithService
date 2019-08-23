@@ -20,10 +20,10 @@
                                         <div class="py-2 text-uppercase">Price</div>
                                     </th>
                                     <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Quantity</div>
+                                        <div class="py-2 text-uppercase middle">Quantity</div>
                                     </th>
                                     <th scope="col" class="border-0 bg-light">
-                                        <div class="py-2 text-uppercase">Add / Remove</div>
+                                        <div class="py-2 text-uppercase middle">Add / Remove</div>
                                     </th>
                                 </tr>
                             </thead>
@@ -42,8 +42,8 @@
                                     </th>
                                     <td class="border-0 align-middle"><strong>{{pi.product.price | currency}}</strong>
                                     </td>
-                                    <td class="border-0 align-middle"><strong>{{pi.quantity}}</strong></td>
-                                    <td class="border-0 align-middle">
+                                    <td class="border-0 align-middle middle"><strong>{{pi.quantity}}</strong></td>
+                                    <td class="border-0 align-middle middle">
                                         <app-shopping-list-product-adder-remover [product]="pi.product">
                                         </app-shopping-list-product-adder-remover>
                                     </td>

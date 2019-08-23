@@ -1,3 +1,14 @@
 .cartIcon {
   cursor: pointer;
 }
+
+.badge {
+  font-size: 15px;
+  border: 3px solid black;
+  border-radius: 999px;
+  padding: 0px 5px 0 5px;
+  position: relative;
+  left: 5px;
+  top: -15px;
+  opacity: 0.9;
+}

@@ -1,2 +1,3 @@
+<label *ngIf="includeCounter" class="badge">{{counter}}</label>
 <img *ngIf="counter > 0" src="assets/cartIcons/cartUp.png" alt="cartUp" class="catIcon" (click)="removeFromCart()">
-<img src="assets/cartIcons/cartDown.png" alt="cartDown" class="cartIcon right haveBadge" (click)="addToCart()" value=5>
+<img src="assets/cartIcons/cartDown.png" alt="cartDown" class="cartIcon right" (click)="addToCart()">

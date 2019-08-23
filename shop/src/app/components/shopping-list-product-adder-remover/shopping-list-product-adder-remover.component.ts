@@ -9,6 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ShoppingListProductAdderRemoverComponent implements OnInit {
   @Input() product: Product;
+  @Input() includeCounter: boolean = true;
   counter: number = 0;
   constructor(private cartService: CartService) {}
 
