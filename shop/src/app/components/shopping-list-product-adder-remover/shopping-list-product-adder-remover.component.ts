@@ -23,8 +23,6 @@ export class ShoppingListProductAdderRemoverComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('ssssss');
-
     this.counter = this.cartService.getQuantityInShopingList(this.product);
   }
 }
