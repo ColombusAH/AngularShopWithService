@@ -68,11 +68,11 @@
 .haveBadge:after {
   content: attr(value);
   font-size: 20px;
-  background: wheat;
+  background: rgb(243, 233, 216);
   border-radius: 99px;
   padding: 0px 5px 0 5px;
   position: relative;
   left: 5px;
   top: -2px;
-  opacity: 0.9;
+  opacity: 1;
 }
