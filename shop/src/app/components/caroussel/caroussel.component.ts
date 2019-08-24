@@ -1,5 +1,5 @@
 import { Product } from './../../models/product.model';
-import { Component, ViewChild, Input, OnInit } from '@angular/core';
+import { Component, ViewChild, Input } from '@angular/core';
 import {
   NgbCarousel,
   NgbSlideEvent,
@@ -13,6 +13,7 @@ import {
 })
 export class CarousselComponent {
   @Input() productList: Product[];
+
   images: string[];
   paused = false;
   unpauseOnArrow = false;

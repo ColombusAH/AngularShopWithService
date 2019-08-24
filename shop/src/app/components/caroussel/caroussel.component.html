@@ -1,4 +1,4 @@
-<ngb-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+<ngb-carousel #carousel interval="3000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
     <ng-template ngbSlide *ngFor="let p of productList; index as i">
         <div class="carousel-caption">
             <h3>{{p.title}}</h3>
