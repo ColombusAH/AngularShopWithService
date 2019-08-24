@@ -9,7 +9,6 @@ import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.com
 import { CategorySelectorComponent } from './components/category-selector/category-selector.component';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
-import { CarousselComponent } from './components/caroussel/caroussel.component';
 import { HomeComponent } from './pages/home-page/home.component';
 import { AboutComponent } from './pages/about-page/about.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
@@ -20,6 +19,7 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { ShoppingListProductAdderRemoverComponent } from './components/shopping-list-product-adder-remover/shopping-list-product-adder-remover.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { CarousselComponent } from './components/caroussel/caroussel.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +31,14 @@ import { FormsModule } from '@angular/forms';
     CategorySelectorComponent,
     SummaryPipe,
     ProductDetailsComponent,
-    CarousselComponent,
     HomeComponent,
     AboutComponent,
     ProductsPageComponent,
     ContactPageComponent,
     SocialLinkComponent,
     CartPageComponent,
-    ShoppingListProductAdderRemoverComponent
+    ShoppingListProductAdderRemoverComponent,
+    CarousselComponent
   ],
   imports: [
     BrowserModule,

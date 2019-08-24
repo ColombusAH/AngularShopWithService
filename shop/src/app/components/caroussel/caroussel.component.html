@@ -1,3 +1,16 @@
-<div class="container">
-    <app-product [product]="currentProduct"></app-product>
+<ngb-carousel #carousel interval="1000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+    <ng-template ngbSlide *ngFor="let p of productList; index as i">
+        <div class="carousel-caption">
+            <h3>{{p.title}}</h3>
+        </div>
+        <div class="picsum-img-wrapper">
+            <img [src]="p.imageUrl" [alt]="p.tittle">
+        </div>
+    </ng-template>
+</ngb-carousel>
+
+<hr>
+
+<div class="form-check">
+    <label class="form-check-label" for="pauseOnHover"></label>
 </div>
