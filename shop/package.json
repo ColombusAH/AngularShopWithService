@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
     "@ng-bootstrap/ng-bootstrap": "^5.1.0",
+    "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
     "bootstrap": "^4.3.1",
     "lodash": "^4.17.15",
     "rxjs": "~6.4.0",
