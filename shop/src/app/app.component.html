@@ -1,10 +1,11 @@
 <main class="appLayout--fullPage">
     <div class="headerSection--full">
         <app-header (menuBarTogglerEvent)="toggleMenuBar()" (pageNavigaterEvent)="changePage($event)"
-            [cartSize]="cartService.shopingListSize()"></app-header>
+            [cartSize]="cartService.shopingListSize()" [userLoggedIn]="userIsLoggedIn()"></app-header>
     </div>
     <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"
-        (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames" [cartSize]="cartService.shopingListSize()">
+        (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames" [cartSize]="cartService.shopingListSize()"
+        [userLoggedIn]="userIsLoggedIn()" (logoutClickedEvent)="logout()">
     </app-sidebar-menu>
     <img class="img--wallBackground" src="assets/wallBackground.jpg">
 
@@ -35,6 +36,10 @@
 
         <div *ngSwitchCase="'Cart'" @fade>
             <app-cart-page></app-cart-page>
+        </div>
+
+        <div @fade *ngSwitchCase="'Login'" class="page">
+            <app-login-page (loginSuccessEvent)="loginSucess()"></app-login-page>
         </div>
     </section>
 </main>

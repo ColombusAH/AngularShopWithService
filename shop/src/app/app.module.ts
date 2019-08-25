@@ -18,8 +18,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { ShoppingListProductAdderRemoverComponent } from './components/shopping-list-product-adder-remover/shopping-list-product-adder-remover.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CarousselComponent } from './components/caroussel/caroussel.component';
     SocialLinkComponent,
     CartPageComponent,
     ShoppingListProductAdderRemoverComponent,
-    CarousselComponent
+    CarousselComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { CarousselComponent } from './components/caroussel/caroussel.component';
     FontAwesomeModule,
     NgbModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

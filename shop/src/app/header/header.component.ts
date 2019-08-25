@@ -10,9 +10,8 @@ export class HeaderComponent {
   @Output() menuBarTogglerEvent = new EventEmitter();
   @Output() pageNavigaterEvent = new EventEmitter<string>();
   @Input() cartSize: number = 0;
+  @Input() userLoggedIn: boolean = false;
   faShoppingCart = faShoppingCart;
-
-  constructor() {}
 
   onMenuBarBtnClicked() {
     this.menuBarTogglerEvent.emit();

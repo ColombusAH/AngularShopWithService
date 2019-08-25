@@ -1,5 +1,7 @@
-<span *ngIf="includeCounter && counter > 0" class="badge">{{counter}}</span>
-<img *ngIf="counter > 0" src="assets/cartIcons/cartUp.png" alt="cartUp" class="icon--scaleOut"
-    (click)="removeFromCart()">
+<span *ngIf="toShow()">
+    <span *ngIf="includeCounter && counter > 0" class="badge">{{counter}}</span>
+    <img *ngIf="counter > 0" src="assets/cartIcons/cartUp.png" alt="cartUp" class="icon--scaleOut"
+        (click)="removeFromCart()">
 
-<img src="assets/cartIcons/cartDown.png" alt="cartDown" class="icon--scaleOut" (click)="addToCart()">
+    <img src="assets/cartIcons/cartDown.png" alt="cartDown" class="icon--scaleOut" (click)="addToCart()">
+</span>

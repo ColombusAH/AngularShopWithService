@@ -2,7 +2,14 @@
     <a href="#" class="closebtn" (click)="closeMenuBar()">&times;</a>
 
     <a *ngFor="let linkName  of linksNames;first as isFirst" href="#" (click)="onLinkClicked(linkName)">{{linkName}}</a>
-    <a href="#" class="haveBadge" [(attr.value)]="cartSize" (click)="onLinkClicked('Cart')">Cart</a>
+
+
+    <a href="#" *ngIf="!userLoggedIn" (click)="onLinkClicked('Login')">Login</a>
+
+    <a href="#" *ngIf="userLoggedIn" class="haveBadge" [(attr.value)]="cartSize"
+        (click)="onLinkClicked('Cart')">Cart</a>
+    <a href="#" *ngIf="userLoggedIn" (click)="logoutClicked()">Logout</a>
+
 
     <div class="navbar__socialIcon--end">
         <app-social-link>
