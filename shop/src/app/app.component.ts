@@ -24,10 +24,12 @@ enum Page {
 export class AppComponent implements OnInit {
   title = 'shop';
   currentPage: Page = Page.Home;
+  previousPage: Page = Page.Home;
   currentProduct: Product = null;
   menubarMode: boolean = false;
   userHavePermission: boolean = false;
   pagesNames = [Page.Home, Page.About, Page.Products, Page.Contact];
+
   constructor(
     private cartService: CartService,
     private userService: UserService,
@@ -38,6 +40,7 @@ export class AppComponent implements OnInit {
     this.menubarMode = !this.menubarMode;
   }
   changePage(page: Page) {
+    this.previousPage = this.currentPage;
     this.currentPage = page;
   }
   productSelected(product: Product) {
@@ -48,6 +51,7 @@ export class AppComponent implements OnInit {
   logout() {
     this.userService.logout();
     this.toggleMenuBar();
+    this.userHavePermission = false;
   }
 
   loginSucess() {
