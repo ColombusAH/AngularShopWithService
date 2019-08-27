@@ -48,11 +48,6 @@ h2 {
 }
 
 .btn {
-  border-radius: 30%;
-  color: rgb(1, 155, 216);
-  border-color: rgb(1, 155, 216);
-  background-color: rgb(191, 197, 197);
-  width: 8em;
-  height: 3em;
+ 
   margin-left: 1em;
-}
+} 

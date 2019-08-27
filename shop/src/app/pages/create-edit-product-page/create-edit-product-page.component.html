@@ -1,4 +1,4 @@
-<div class="container center">
+<div class="container">
 
     <h1>Add / Edit Product</h1>
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
@@ -44,6 +44,8 @@
             <label for="description">Description</label>
             <textarea class="form-control" id="description" rows="5" formControlName="description"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
+        <div class="container center"><button type="submit" class="btn btn-primary" id="submit"
+                [disabled]="!productForm.valid">Submit</button></div>
+        <button type="button" class="btn btn-secondary" (click)="goToPreviousPage()">Back</button>
     </form>
 </div>

@@ -1,6 +1,6 @@
 import { Category } from './../../models/category.model';
 import { ProductsService } from './../../services/products.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/product.model';
 
@@ -13,6 +13,7 @@ export class CreateEditProductPageComponent implements OnInit {
   productForm: FormGroup;
   categories: Category[];
   @Input() product: Product = null;
+  @Output() goToPreviousPageEvent = new EventEmitter();
   initialCategoryValue: string = 'Choose Category';
   constructor(fb: FormBuilder, private productService: ProductsService) {
     this.productForm = fb.group({
@@ -69,5 +70,9 @@ export class CreateEditProductPageComponent implements OnInit {
     this.product.price = data.price;
     this.product.description = data.description;
     this.productService.addToproducts(this.product);
+  }
+
+  goToPreviousPage() {
+    this.goToPreviousPageEvent.emit();
   }
 }

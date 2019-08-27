@@ -43,6 +43,11 @@ export class AppComponent implements OnInit {
     this.previousPage = this.currentPage;
     this.currentPage = page;
   }
+
+  navigateToPreviousPage() {
+    this.changePage(this.previousPage);
+  }
+
   productSelected(product: Product) {
     this.currentProduct = product;
     this.currentPage = Page.ProductDetails;
