@@ -1,5 +1,5 @@
+import { Product } from './../models/product.model';
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product.model';
 import { Category } from '../models/category.model';
 
 @Injectable({
@@ -158,7 +158,7 @@ export class ProductsService {
     return this._productList;
   }
 
-  getProductsByCategory(category: Category) {
+  getProductsByCategory(category: Category): Product[] {
     if (category.title.toLowerCase() !== 'all') {
       return this._productList.filter(
         p => p.categoryId.localeCompare(category.id) === 0
@@ -169,5 +169,15 @@ export class ProductsService {
 
   getAllCategories() {
     return this._categoriesList;
+  }
+
+  addToproducts(product: Product) {
+    const index = this._productList.findIndex(p => p.id === product.id);
+    if (index !== -1) {
+      this._productList[index] = product;
+    } else {
+      product.id = this._productList.length + '';
+      this._productList.push(product);
+    }
   }
 }

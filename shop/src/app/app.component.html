@@ -1,11 +1,11 @@
 <main class="appLayout--fullPage">
     <div class="headerSection--full">
         <app-header (menuBarTogglerEvent)="toggleMenuBar()" (pageNavigaterEvent)="changePage($event)"
-            [cartSize]="cartService.shopingListSize()" [userLoggedIn]="userIsLoggedIn()"></app-header>
+            [cartSize]="getCartSize()" [userLoggedIn]="userIsLoggedIn()"></app-header>
     </div>
     <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"
-        (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames" [cartSize]="cartService.shopingListSize()"
-        [userLoggedIn]="userIsLoggedIn()" (logoutClickedEvent)="logout()">
+        (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames" [cartSize]="getCartSize()"
+        [userLoggedIn]="userIsLoggedIn()" (logoutClickedEvent)="logout()" [userHavePermission]="userHavePermission">
     </app-sidebar-menu>
     <img class="img--wallBackground" src="assets/wallBackground.jpg">
 
@@ -21,7 +21,8 @@
         </div>
 
         <div *ngSwitchCase="'Products'" @fade>
-            <app-products-page (productSelectedEvent)="productSelected($event)">
+            <app-products-page (productSelectedEvent)="productSelected($event)"
+                (onEditProductEvent)="editProduct($event)">
             </app-products-page>
         </div>
 
@@ -40,6 +41,10 @@
 
         <div @fade *ngSwitchCase="'Login'" class="page">
             <app-login-page (loginSuccessEvent)="loginSucess()"></app-login-page>
+        </div>
+
+        <div fade *ngSwitchCase="'ProductManagement'">
+            <app-create-edit-product-page [product]="currentProduct"></app-create-edit-product-page>
         </div>
     </section>
 </main>

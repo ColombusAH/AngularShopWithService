@@ -1,8 +1,13 @@
 <div class="productList--flex">
     <app-product *ngFor="let p of products" [product]="p" (productclickedEvent)="productClicked(p)" @fade>
-        <div class="container__icon--righted">
-            <app-shopping-list-product-adder-remover [product]="p" [includeCounter]="true">
-            </app-shopping-list-product-adder-remover>
+        <div class="icons__container">
+            <app-edit-product-icon *appShowIfPermission="'admin'" (click)="editProductClicked(p)">
+            </app-edit-product-icon>
+            <div class="container__icon--righted">
+                <app-shopping-list-product-adder-remover [product]="p" [includeCounter]="true">
+                </app-shopping-list-product-adder-remover>
+            </div>
         </div>
+
     </app-product>
 </div>

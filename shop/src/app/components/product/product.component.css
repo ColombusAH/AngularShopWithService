@@ -24,8 +24,8 @@
   color: whitesmoke;
 }
 
-.car__description {
+.card__description {
   min-height: 3em;
   margin-left: 0.2em;
+  margin-bottom: 0;
 }
-

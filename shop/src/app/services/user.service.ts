@@ -8,7 +8,10 @@ export class UserService implements OnInit {
   usersList: User[];
   private _userLoggedIn: boolean = false;
   constructor() {
-    this.usersList = [new User('avner', '1234', 'admin')];
+    this.usersList = [
+      new User('admin', 'admin', 'admin'),
+      new User('user', 'user', 'user')
+    ];
   }
 
   login(username: string, pass: string): boolean {

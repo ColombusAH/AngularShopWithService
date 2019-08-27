@@ -3,6 +3,7 @@ import { CartService } from './services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { fade } from './animations/fade.animation';
 import { Product } from './models/product.model';
+import { PermissionService } from './services/permission.service';
 
 enum Page {
   Home = 'Home',
@@ -10,7 +11,8 @@ enum Page {
   Products = 'Products',
   Contact = 'Contact',
   ProductDetails = 'Product Details',
-  Login = 'Login'
+  Login = 'Login',
+  ProductManagement = 'ProductManagement'
 }
 
 @Component({
@@ -19,15 +21,17 @@ enum Page {
   styleUrls: ['./app.component.css'],
   animations: [fade]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'shop';
   currentPage: Page = Page.Home;
   currentProduct: Product = null;
   menubarMode: boolean = false;
+  userHavePermission: boolean = false;
   pagesNames = [Page.Home, Page.About, Page.Products, Page.Contact];
   constructor(
     private cartService: CartService,
-    private userService: UserService
+    private userService: UserService,
+    private permissionService: PermissionService
   ) {}
 
   toggleMenuBar() {
@@ -48,8 +52,22 @@ export class AppComponent {
 
   loginSucess() {
     this.changePage(Page.Home);
+    this.userHavePermission = this.permissionService.userHavePermission();
   }
   userIsLoggedIn(): boolean {
     return this.userService.userLoggedIn();
+  }
+
+  getCartSize(): number {
+    return this.cartService.shopingListSize();
+  }
+
+  editProduct(product: Product) {
+    this.currentProduct = product;
+    this.changePage(Page.ProductManagement);
+  }
+
+  ngOnInit(): void {
+    this.userHavePermission = this.permissionService.userHavePermission();
   }
 }

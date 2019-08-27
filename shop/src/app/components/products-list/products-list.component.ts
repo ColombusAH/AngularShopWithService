@@ -2,7 +2,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { fade } from '../../animations/fade.animation';
 import { Product } from 'src/app/models/product.model';
 
-
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -12,9 +11,14 @@ import { Product } from 'src/app/models/product.model';
 export class ProductsListComponent {
   @Input() products: Product[];
   @Output() onProductSelectedEvent = new EventEmitter<Product>();
+  @Output() onEditProductEvent = new EventEmitter<Product>();
   constructor() {}
 
   productClicked(product: Product) {
     this.onProductSelectedEvent.emit(product);
+  }
+
+  editProductClicked(product: Product) {
+    this.onEditProductEvent.emit(product);
   }
 }

@@ -1,0 +1,49 @@
+<div class="container center">
+
+    <h1>Add / Edit Product</h1>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="category">Select Category</label>
+            <select class="form-control" id="category" formControlName="category" placeholder="choose">
+                <option [value]="initialCategoryValue" disabled [selected]=true>{{initialCategoryValue}}
+                </option>
+                <option *ngFor="let c of categories" [ngValue]="c">{{ c.title }}</option>
+            </select>
+            <div *ngIf="haveError('category')" class="alert alert-danger" role="alert">
+                Category is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">Image</label>
+            <input type="text" class="form-control" id="imageUrl" aria-describedby="imageHelp"
+                placeholder="Enter image url" formControlName="imageUrl">
+            <div *ngIf="haveError('imageUrl')" class="alert alert-danger" role="alert">
+                Image url is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="title" formControlName="title">
+            <div *ngIf="haveError('title')" class="alert alert-danger" role="alert">
+                titl is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" placeholder="Price" formControlName="price">
+            <div *ngIf="haveError('price')" class="alert alert-danger" role="alert">
+                Price is required
+            </div>
+            <div *ngIf="priceNotValid()" class="alert alert-danger" role="alert">
+                Price must be greater than zero (0)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="5" formControlName="description"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
+    </form>
+</div>

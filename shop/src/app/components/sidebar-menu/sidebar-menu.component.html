@@ -3,6 +3,8 @@
 
     <a *ngFor="let linkName  of linksNames;first as isFirst" href="#" (click)="onLinkClicked(linkName)">{{linkName}}</a>
 
+    <a href="#" *ngIf="userHavePermission" (click)="onLinkClicked('ProductManagement')">Add Product</a>
+
 
     <a href="#" *ngIf="!userLoggedIn" (click)="onLinkClicked('Login')">Login</a>
 

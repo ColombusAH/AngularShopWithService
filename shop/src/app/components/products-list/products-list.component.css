@@ -8,9 +8,20 @@ app-product {
   width: 30%;
 }
 
+.icons__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
 .container__icon--righted {
   display: flex;
   justify-content: flex-end;
+}
+
+app-edit-product-icon {
+  width: 33%;
+  height: 40%;
 }
 @media screen and (max-width: 584px) {
   app-product {

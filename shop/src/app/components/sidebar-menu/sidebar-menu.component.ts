@@ -10,6 +10,7 @@ export class SidebarMenuComponent {
   @Input() linksNames: string[];
   @Input() cartSize: number = 0;
   @Input() userLoggedIn: boolean = false;
+  @Input() userHavePermission: boolean = false;
   @Output() logoutClickedEvent = new EventEmitter();
   @Output() onCloseMenuBar = new EventEmitter();
   @Output() pageNavigaterEvent = new EventEmitter<string>();

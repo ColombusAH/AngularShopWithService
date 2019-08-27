@@ -10,6 +10,7 @@ import { Category } from 'src/app/models/category.model';
 })
 export class ProductsPageComponent implements OnInit {
   @Output() productSelectedEvent = new EventEmitter<Product>();
+  @Output() onEditProductEvent = new EventEmitter<Product>();
   categoriesList: Category[];
   productList: Product[];
 
@@ -20,6 +21,9 @@ export class ProductsPageComponent implements OnInit {
   }
   productSelected(product: Product) {
     this.productSelectedEvent.emit(product);
+  }
+  editProductClicked(product: Product) {
+    this.onEditProductEvent.emit(product);
   }
   ngOnInit() {
     this.productList = this.productsService.getAllProducts();

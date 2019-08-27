@@ -21,6 +21,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { CreateEditProductPageComponent } from './pages/create-edit-product-page/create-edit-product-page.component';
+import { ShowIfPermissionDirective } from './directives/show-if-permission.directive';
+import { EditProductIconComponent } from './components/edit-product-icon/edit-product-icon.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     CartPageComponent,
     ShoppingListProductAdderRemoverComponent,
     CarousselComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    CreateEditProductPageComponent,
+    ShowIfPermissionDirective,
+    EditProductIconComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     FontAwesomeModule,
     NgbModule,
     FormsModule,
-    NgbModule,
     ReactiveFormsModule
   ],
   providers: [],
