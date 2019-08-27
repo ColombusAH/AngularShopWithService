@@ -17,7 +17,7 @@ import { SocialLinkComponent } from './components/social-link/social-link.compon
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { ShoppingListProductAdderRemoverComponent } from './components/shopping-list-product-adder-remover/shopping-list-product-adder-remover.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
@@ -46,7 +46,7 @@ import { EditProductIconComponent } from './components/edit-product-icon/edit-pr
     LoginPageComponent,
     CreateEditProductPageComponent,
     ShowIfPermissionDirective,
-    EditProductIconComponent
+    EditProductIconComponent,
   ],
   imports: [
     BrowserModule,

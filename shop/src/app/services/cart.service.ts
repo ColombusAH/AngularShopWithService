@@ -9,14 +9,15 @@ import * as _ from 'lodash';
 export class CartService {
   private _shopingList: ProductItem[] = [];
   private _totalPrice: number = 0;
-  constructor() {
-    
-  }
+  constructor() {}
 
-  addProduct(product: Product) {
+  addProduct(product: Product): void {
     //for now compared with ref , should compare with id when using real data.
     this._totalPrice += product.price;
-    const index = _.findIndex(this._shopingList, pi => pi.product.id === product.id);
+    const index = _.findIndex(
+      this._shopingList,
+      pi => pi.product.id === product.id
+    );
     if (index === -1) {
       this._shopingList.push(new ProductItem(product));
     } else {
@@ -24,8 +25,11 @@ export class CartService {
     }
   }
 
-  removeProduct(product: Product) {
-    const index = _.findIndex(this._shopingList, pi => pi.product.id === product.id);
+  removeProduct(product: Product): void {
+    const index = _.findIndex(
+      this._shopingList,
+      pi => pi.product.id === product.id
+    );
     if (index !== -1) {
       this._totalPrice -= product.price;
       this._shopingList[index].quantity -= 1;
@@ -35,6 +39,9 @@ export class CartService {
     }
   }
 
+  emptyCart(): void {
+    this._shopingList = [] as ProductItem[];
+  }
   shopingListSize() {
     let size = 0;
     _.forEach(this._shopingList, pi => (size += pi.quantity));
@@ -46,7 +53,9 @@ export class CartService {
   }
 
   getQuantityInShopingList(prodduct: Product) {
-    const index = this.shopingList.findIndex(pi => prodduct.id === pi.product.id);
+    const index = this.shopingList.findIndex(
+      pi => prodduct.id === pi.product.id
+    );
     if (index === -1) {
       return 0;
     } else {
@@ -54,9 +63,7 @@ export class CartService {
     }
   }
 
-  
-  public  getTotalPrice() : number {
+  public getTotalPrice(): number {
     return this._totalPrice;
   }
-  
 }

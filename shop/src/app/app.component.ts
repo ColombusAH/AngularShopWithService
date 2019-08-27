@@ -57,6 +57,7 @@ export class AppComponent implements OnInit {
     this.userService.logout();
     this.toggleMenuBar();
     this.userHavePermission = false;
+    this.cartService.emptyCart();
   }
 
   loginSucess() {
