@@ -25,6 +25,7 @@ import { CreateEditProductPageComponent } from './pages/create-edit-product-page
 import { ShowIfPermissionDirective } from './directives/show-if-permission.directive';
 import { EditProductIconComponent } from './components/edit-product-icon/edit-product-icon.component';
 import { NgbdModalConfirmComponent } from './components/ngbd-modal-confirm/ngbd-modal-confirm.component';
+import { NgbdModalProductFormComponent } from './components/ngbd-modal-product-form/ngbd-modal-product-form.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { NgbdModalConfirmComponent } from './components/ngbd-modal-confirm/ngbd-
     ShowIfPermissionDirective,
     EditProductIconComponent,
     NgbdModalConfirmComponent,
-    NgbdModalConfirmComponent
+    NgbdModalConfirmComponent,
+    NgbdModalProductFormComponent
   ],
   imports: [
     BrowserModule,
