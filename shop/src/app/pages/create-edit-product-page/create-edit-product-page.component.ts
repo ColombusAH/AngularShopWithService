@@ -15,6 +15,7 @@ export class CreateEditProductPageComponent implements OnInit {
   @Input() product: Product = null;
   @Output() goToPreviousPageEvent = new EventEmitter();
   initialCategoryValue: string = 'Choose Category';
+  newProductMode: boolean;
   constructor(fb: FormBuilder, private productService: ProductsService) {
     this.productForm = fb.group({
       category: ['', Validators.required],
@@ -46,9 +47,34 @@ export class CreateEditProductPageComponent implements OnInit {
 
   ngOnInit() {
     this.categories = this.productService.getAllCategories();
+    this.initForm();
+  }
+
+  onSubmit() {
+    const data = this.productForm.value;
+    this.product.categoryId = data.category.id;
+    this.product.imageUrl = data.imageUrl;
+    this.product.title = data.title;
+    this.product.price = data.price;
+    this.product.description = data.description;
+    this.productService.addToproducts(this.product);
+    if (this.newProductMode) {
+      this.productForm.reset();
+      this.product = null;
+      this.initForm();
+    }
+  }
+
+  goToPreviousPage() {
+    this.goToPreviousPageEvent.emit();
+  }
+
+  initForm(): void {
     if (!this.product) {
       this.product = new Product('', '', '', '', -1, '');
+      this.newProductMode = true;
     } else {
+      this.newProductMode = false;
       this.initialCategoryValue = this.categories.find(
         c => this.product.categoryId == c.id
       ).title;
@@ -60,19 +86,5 @@ export class CreateEditProductPageComponent implements OnInit {
         description: this.product.description
       });
     }
-  }
-
-  onSubmit() {
-    const data = this.productForm.value;
-    this.product.categoryId = data.category.id;
-    this.product.imageUrl = data.imageUrl;
-    this.product.title = data.title;
-    this.product.price = data.price;
-    this.product.description = data.description;
-    this.productService.addToproducts(this.product);
-  }
-
-  goToPreviousPage() {
-    this.goToPreviousPageEvent.emit();
   }
 }
