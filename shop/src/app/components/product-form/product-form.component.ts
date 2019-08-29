@@ -15,6 +15,7 @@ export class ProductFormComponent implements OnInit {
   @Input() product: Product = null;
   @Output() formSubmitedEvent = new EventEmitter();
   initialCategoryValue: string;
+  submited: boolean;
 
   constructor(fb: FormBuilder, private productService: ProductsService) {
     this.productForm = fb.group({
@@ -64,6 +65,9 @@ export class ProductFormComponent implements OnInit {
     this.product.description = data.description;
     this.productService.addToproducts(this.product);
     this.formSubmitedEvent.emit();
+    this.product = null;
+    this.initForm();
+    this.submited = true;
   }
 
   initForm(): void {
@@ -82,5 +86,7 @@ export class ProductFormComponent implements OnInit {
         description: this.product.description
       });
     }
+    this.productForm.reset();
+    this.submited = false;
   }
 }

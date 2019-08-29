@@ -4,7 +4,7 @@
         <div class="form-group">
             <label for="category">Select Category</label>
             <select class="form-control" id="category" formControlName="category">
-                <option disabled value="{{initialCategoryValue}}" [selected]=true>{{initialCategoryValue}}
+                <option disabled value="{{initialCategoryValue}}" selected={{!submited}}>{{initialCategoryValue}}
                 </option>
                 <option *ngFor="let c of categories" [ngValue]="c">{{ c.title }}</option>
             </select>
