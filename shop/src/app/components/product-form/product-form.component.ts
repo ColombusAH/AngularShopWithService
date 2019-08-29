@@ -67,6 +67,7 @@ export class ProductFormComponent implements OnInit {
     this.formSubmitedEvent.emit();
     this.product = null;
     this.initForm();
+    this.productForm.reset();
     this.submited = true;
   }
 
@@ -86,7 +87,7 @@ export class ProductFormComponent implements OnInit {
         description: this.product.description
       });
     }
-    this.productForm.reset();
+
     this.submited = false;
   }
 }
