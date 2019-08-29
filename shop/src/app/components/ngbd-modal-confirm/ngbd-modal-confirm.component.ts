@@ -18,9 +18,7 @@ export class NgbdModalConfirmComponent {
         result => {
           this.okButtonClicked.emit();
         },
-        reason => {
-          console.log('xxxxxxx');
-        }
+        reason => {}
       );
   }
 }

@@ -5,17 +5,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/product.model';
 
 @Component({
-  selector: 'app-create-edit-product-page',
-  templateUrl: './create-edit-product-page.component.html',
-  styleUrls: ['./create-edit-product-page.component.css']
+  selector: 'app-product-form',
+  templateUrl: './product-form.component.html',
+  styleUrls: ['./product-form.component.css']
 })
-export class CreateEditProductPageComponent implements OnInit {
+export class ProductFormComponent implements OnInit {
   productForm: FormGroup;
   categories: Category[];
   @Input() product: Product = null;
-  @Output() goToPreviousPageEvent = new EventEmitter();
-  initialCategoryValue: string = 'Choose Category';
-  newProductMode: boolean;
+  @Output() formSubmitedEvent = new EventEmitter();
+  initialCategoryValue: string;
+
   constructor(fb: FormBuilder, private productService: ProductsService) {
     this.productForm = fb.group({
       category: ['', Validators.required],
@@ -52,31 +52,24 @@ export class CreateEditProductPageComponent implements OnInit {
 
   onSubmit() {
     const data = this.productForm.value;
-    this.product.categoryId = data.category.id;
+    this.product.categoryId =
+      data.category.id ||
+      this.categories.find(c => c.title === this.initialCategoryValue).id;
     this.product.imageUrl = data.imageUrl;
     this.product.title = data.title;
     this.product.price = data.price;
     this.product.description = data.description;
     this.productService.addToproducts(this.product);
-    if (this.newProductMode) {
-      this.productForm.reset();
-      this.product = null;
-      this.initForm();
-    }
-  }
-
-  goToPreviousPage() {
-    this.goToPreviousPageEvent.emit();
+    this.formSubmitedEvent.emit();
   }
 
   initForm(): void {
     if (!this.product) {
+      this.initialCategoryValue = 'Choose Category';
       this.product = new Product('', '', '', '', -1, '');
-      this.newProductMode = true;
     } else {
-      this.newProductMode = false;
       this.initialCategoryValue = this.categories.find(
-        c => this.product.categoryId == c.id
+        c => this.product.categoryId === c.id
       ).title;
       this.productForm.patchValue({
         category: this.initialCategoryValue,

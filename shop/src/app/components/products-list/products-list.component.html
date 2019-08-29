@@ -2,8 +2,6 @@
     <app-product *ngFor="let p of products" [product]="p" (productclickedEvent)="productClicked(p)" @fade>
         <div class="icons__container">
             <app-ngbd-modal-product-form [product]="p"></app-ngbd-modal-product-form>
-            <app-edit-product-icon *appShowIfPermission="'admin'" (click)="editProductClicked(p)">
-            </app-edit-product-icon>
             <div class="container__icon--righted">
                 <app-shopping-list-product-adder-remover [product]="p" [includeCounter]="true">
                 </app-shopping-list-product-adder-remover>

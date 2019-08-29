@@ -44,7 +44,7 @@
         </div>
 
         <div fade *ngSwitchCase="'ProductManagement'">
-            <app-create-edit-product-page [product]="currentProduct" (goToPreviousPageEvent)="navigateToPreviousPage()"></app-create-edit-product-page>
+            <app-add-new-product-page (backButtonClickedEvent)="changePage('Home')"></app-add-new-product-page>
         </div>
     </section>
 </main>

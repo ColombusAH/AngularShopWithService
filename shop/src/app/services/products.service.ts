@@ -167,6 +167,11 @@ export class ProductsService {
     return this.getAllProducts();
   }
 
+  getproductByID(id: string): Product {
+    const product: Product = this._productList.find(p => p.id === id);
+    return product;
+  }
+
   getAllCategories() {
     return this._categoriesList;
   }

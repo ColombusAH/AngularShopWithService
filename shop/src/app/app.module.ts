@@ -21,11 +21,12 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { CreateEditProductPageComponent } from './pages/create-edit-product-page/create-edit-product-page.component';
 import { ShowIfPermissionDirective } from './directives/show-if-permission.directive';
 import { EditProductIconComponent } from './components/edit-product-icon/edit-product-icon.component';
 import { NgbdModalConfirmComponent } from './components/ngbd-modal-confirm/ngbd-modal-confirm.component';
 import { NgbdModalProductFormComponent } from './components/ngbd-modal-product-form/ngbd-modal-product-form.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { AddNewProductPageComponent } from './pages/add-new-product-page/add-new-product-page.component';
 
 @NgModule({
   declarations: [
@@ -46,12 +47,13 @@ import { NgbdModalProductFormComponent } from './components/ngbd-modal-product-f
     ShoppingListProductAdderRemoverComponent,
     CarousselComponent,
     LoginPageComponent,
-    CreateEditProductPageComponent,
     ShowIfPermissionDirective,
     EditProductIconComponent,
     NgbdModalConfirmComponent,
     NgbdModalConfirmComponent,
-    NgbdModalProductFormComponent
+    NgbdModalProductFormComponent,
+    ProductFormComponent,
+    AddNewProductPageComponent
   ],
   imports: [
     BrowserModule,

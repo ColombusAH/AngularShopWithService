@@ -1,12 +1,10 @@
 <div class="container">
-
-    <h1>Add / Edit Product</h1>
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
 
         <div class="form-group">
             <label for="category">Select Category</label>
-            <select class="form-control" id="category" formControlName="category" placeholder="choose">
-                <option [value]="initialCategoryValue" disabled [selected]=true>{{initialCategoryValue}}
+            <select class="form-control" id="category" formControlName="category">
+                <option disabled value="{{initialCategoryValue}}" [selected]=true>{{initialCategoryValue}}
                 </option>
                 <option *ngFor="let c of categories" [ngValue]="c">{{ c.title }}</option>
             </select>
@@ -48,7 +46,7 @@
             <app-ngbd-modal-confirm [disabled]="!productForm.valid" (okButtonClicked)="onSubmit()">
             </app-ngbd-modal-confirm>
         </div>
-        <button type="button" class="btn btn-secondary" (click)="goToPreviousPage()">Back</button>
+
 
     </form>
 </div>

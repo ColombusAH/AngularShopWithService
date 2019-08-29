@@ -12,7 +12,8 @@ h1 {
   font-size: 5rem;
   text-transform: uppercase;
   text-shadow: 0 2px white, 0 3px #777;
-  padding: 1em;
+  padding-top: 1em;
+
   text-align: center;
 }
 

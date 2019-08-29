@@ -6,8 +6,9 @@
         </button>
     </div>
     <div class="modal-body">
-    <app-create-edit-product-page [product]="product"></app-create-edit-product-page>
+        <app-product-form [product]="product" *appShowIfPermission="'admin'" (formSubmitedEvent)="modal.dismiss('')">
+        </app-product-form>
     </div>
 </ng-template>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+<img src="assets/edit-icon.jpg" alt="edit icon" (click)="open(content)">

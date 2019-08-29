@@ -16,5 +16,6 @@ export class NgbdModalProductFormComponent implements OnInit {
       .open(content, { ariaLabelledBy: 'modal-basic-title' })
       .result.then(result => {}, reason => {});
   }
+
   ngOnInit() {}
 }
