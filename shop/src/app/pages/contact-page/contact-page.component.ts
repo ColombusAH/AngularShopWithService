@@ -5,11 +5,12 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact-page.component.html',
   styleUrls: ['./contact-page.component.css']
 })
-export class ContactPageComponent implements OnInit {
+export class ContactPageComponent {
+  model = { email: '', subject: '', message: '' };
+  submitted = false;
 
-  constructor() { }
-
-  ngOnInit() {
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.model);
   }
-
 }
