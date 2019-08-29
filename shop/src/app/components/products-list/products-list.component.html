@@ -1,7 +1,7 @@
 <div class="productList--flex">
     <app-product *ngFor="let p of products" [product]="p" (productclickedEvent)="productClicked(p)" @fade>
         <div class="icons__container">
-            <app-ngbd-modal-product-form [product]="p"></app-ngbd-modal-product-form>
+            <app-ngbd-modal-product-form [product]="p" *appShowIfPermission="'admin'"></app-ngbd-modal-product-form>
             <div class="container__icon--righted">
                 <app-shopping-list-product-adder-remover [product]="p" [includeCounter]="true">
                 </app-shopping-list-product-adder-remover>

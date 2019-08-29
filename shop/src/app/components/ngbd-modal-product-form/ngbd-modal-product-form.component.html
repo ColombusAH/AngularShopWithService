@@ -6,7 +6,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <app-product-form [product]="product" *appShowIfPermission="'admin'" (formSubmitedEvent)="modal.dismiss('')">
+        <app-product-form [product]="product" (formSubmitedEvent)="modal.dismiss('')">
         </app-product-form>
     </div>
 </ng-template>
