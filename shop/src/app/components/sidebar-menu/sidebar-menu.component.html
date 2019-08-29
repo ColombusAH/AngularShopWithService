@@ -1,16 +1,18 @@
 <div id="navbar" class="sidenav" [style.width]="isOpen  ? '250px': '0'">
     <a href="#" class="closebtn" (click)="closeMenuBar()">&times;</a>
 
-    <a *ngFor="let linkName  of linksNames;first as isFirst" href="#" (click)="onLinkClicked(linkName)">{{linkName}}</a>
+    <a *ngFor="let linkName  of linksNames;first as isFirst" href="#"
+        (click)="onLinkClicked(linkName)">{{linkName | translate}}</a>
 
-    <a href="#" *ngIf="userHavePermission" (click)="onLinkClicked('ProductManagement')">Add Product</a>
+    <a href="#" *ngIf="userHavePermission" (click)="onLinkClicked('ProductManagement')">
+        {{'Add Product' | translate}}</a>
 
 
-    <a href="#" *ngIf="!userLoggedIn" (click)="onLinkClicked('Login')">Login</a>
+    <a href="#" *ngIf="!userLoggedIn" (click)="onLinkClicked('Login')">{{'Login' | translate}}</a>
 
     <a href="#" *ngIf="userLoggedIn" class="haveBadge" [(attr.value)]="cartSize"
-        (click)="onLinkClicked('Cart')">Cart</a>
-    <a href="#" *ngIf="userLoggedIn" (click)="logoutClicked()">Logout</a>
+        (click)="onLinkClicked('Cart')">{{'Cart' | translate}}</a>
+    <a href="#" *ngIf="userLoggedIn" (click)="logoutClicked()">{{'Logout' | translate}}</a>
 
 
     <div class="navbar__socialIcon--end">
