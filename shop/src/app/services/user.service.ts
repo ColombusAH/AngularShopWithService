@@ -5,17 +5,17 @@ import { Injectable, OnInit } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService implements OnInit {
-  usersList: User[];
+  private readonly _usersList: User[];
   private _userLoggedIn: boolean = false;
   constructor() {
-    this.usersList = [
+    this._usersList = [
       new User('admin', 'admin', 'admin'),
       new User('user', 'user', 'user')
     ];
   }
 
   login(username: string, pass: string): boolean {
-    const user = this.usersList.find(
+    const user = this._usersList.find(
       u => u.username === username && u.password === pass
     );
     if (user) {
@@ -34,6 +34,11 @@ export class UserService implements OnInit {
 
   userLoggedIn(): boolean {
     return (this._userLoggedIn = localStorage.getItem('user') !== null);
+  }
+
+  userIsAdmin(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user && (<string>user.role).toLowerCase() === 'admin';
   }
 
   ngOnInit(): void {

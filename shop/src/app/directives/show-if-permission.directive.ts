@@ -11,7 +11,8 @@ export class ShowIfPermissionDirective {
     private permissionService: PermissionService
   ) {}
   @Input() set appShowIfPermission(requiredPermisssion: string) {
-    if (this.permissionService.userHavePermission(requiredPermisssion)) {
+    const permissionComfirmed:boolean = this.permissionService.userHavePermission(requiredPermisssion);
+    if (permissionComfirmed) {
       this.viewContainerRef.createEmbeddedView(this.templateRef);
     } else {
       this.viewContainerRef.clear();
