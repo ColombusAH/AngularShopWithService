@@ -23,7 +23,8 @@ export class LocalizationService {
         contact: 'Contact',
         'add product': 'Add Product',
         cart: 'Cart',
-        logout: 'Logout'
+        logout: 'Logout',
+        login: 'Login'
       }
     },
     fr: {
@@ -35,7 +36,8 @@ export class LocalizationService {
         contact: 'Contact',
         'add product': 'Ajouter Produit',
         cart: 'Panier',
-        logout: 'Deconnexion'
+        logout: 'Deconnexion',
+        login: 'sidentifier'
       }
     },
     gr: {
@@ -47,7 +49,8 @@ export class LocalizationService {
         contact: 'Kontakt',
         'add product': 'Produkt hinzufügen',
         cart: 'Korb',
-        logout: 'Ausloggen'
+        logout: 'Ausloggen',
+        login: 'Anmeldung'
       }
     }
   };
