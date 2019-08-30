@@ -76,3 +76,7 @@
   top: -2px;
   opacity: 1;
 }
+.select__languages--lg {
+  min-width: 250px;
+  min-height: 40px;
+}

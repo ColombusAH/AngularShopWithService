@@ -1,16 +1,21 @@
-import { ContactPageComponent } from './../pages/contact-page/contact-page.component';
 import { Injectable } from '@angular/core';
+import { LanguageData } from '../models/language.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocalizationService {
-  private _languages: string[] = ['eng', 'fr', 'gr'];
-  private _selectedLanguage: string = 'gr';
+  private readonly _supportedLanguages: LanguageData[] = [
+    { language: 'English', code: 'eng' },
+    { language: 'Français', code: 'fr' },
+    { language: 'Deutsche', code: 'gr' }
+  ];
+
+  private _selectedLanguage: string = 'eng';
 
   private _languageSets = {
     eng: {
-      language: 'eng',
+      language: 'English',
       values: {
         home: 'Home',
         about: 'About',
@@ -22,7 +27,7 @@ export class LocalizationService {
       }
     },
     fr: {
-      language: 'fr',
+      language: 'Français',
       values: {
         home: 'Acceuille',
         about: 'A propos',
@@ -34,7 +39,7 @@ export class LocalizationService {
       }
     },
     gr: {
-      language: 'gr',
+      language: 'Deutsche',
       values: {
         home: 'Begrüßt',
         about: 'Über',
@@ -47,10 +52,12 @@ export class LocalizationService {
     }
   };
 
-  changeLanguage(code: string): void {
-    const language = this._languages.find(lang => lang === code.toLowerCase());
+  useLanguage(code: string): void {
+    const language = this._supportedLanguages.find(
+      sl => sl.code === code.toLowerCase()
+    );
     if (language) {
-      this._selectedLanguage = language;
+      this._selectedLanguage = language.code;
     }
   }
 
@@ -61,5 +68,9 @@ export class LocalizationService {
     if (language) {
       return language.values[code];
     }
+  }
+
+  getAllSupportedLanguages() {
+    return this._supportedLanguages;
   }
 }

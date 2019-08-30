@@ -1,8 +1,13 @@
 <div id="navbar" class="sidenav" [style.width]="isOpen  ? '250px': '0'">
     <a href="#" class="closebtn" (click)="closeMenuBar()">&times;</a>
+    <div class="select__language">
+        <select name="lang" id="lang" #selectLang (change)="languageSelected($event)" class="select__languages--lg">
+            <option *ngFor="let lang of supportedLanguages" [value]="lang.code" class="flag">{{lang.language}}
+            </option>
+        </select>
+    </div>
 
-    <a *ngFor="let linkName  of linksNames;first as isFirst" href="#"
-        (click)="onLinkClicked(linkName)">{{linkName | translate}}</a>
+    <a *ngFor="let linkName  of linksNames" href="#" (click)="onLinkClicked(linkName)">{{linkName | translate}}</a>
 
     <a href="#" *ngIf="userHavePermission" (click)="onLinkClicked('ProductManagement')">
         {{'Add Product' | translate}}</a>

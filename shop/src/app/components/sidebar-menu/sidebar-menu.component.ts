@@ -1,4 +1,6 @@
+import { LanguageData } from './../../models/language.model';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { LocalizationService } from 'src/app/services/localization.service';
 
 @Component({
   selector: 'app-sidebar-menu',
@@ -14,6 +16,11 @@ export class SidebarMenuComponent {
   @Output() logoutClickedEvent = new EventEmitter();
   @Output() onCloseMenuBar = new EventEmitter();
   @Output() pageNavigaterEvent = new EventEmitter<string>();
+  supportedLanguages: LanguageData[];
+
+  constructor(private localizationService: LocalizationService) {
+    this.supportedLanguages = this.localizationService.getAllSupportedLanguages();
+  }
 
   closeMenuBar() {
     this.onCloseMenuBar.emit();
@@ -26,5 +33,11 @@ export class SidebarMenuComponent {
   logoutClicked() {
     this.logoutClickedEvent.emit();
     this.pageNavigaterEvent.emit('Home');
+  }
+
+  languageSelected(event: Event) {
+    const options = event.target['options'];
+    const index = options.selectedIndex;
+    this.localizationService.useLanguage(options[index].value);
   }
 }
