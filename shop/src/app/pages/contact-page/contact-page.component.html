@@ -2,7 +2,7 @@
 
 <div class="container">
 
-    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <form #contactForm="ngForm">
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" required [(ngModel)]="model.email" name="email"
@@ -30,7 +30,8 @@
             <input type="text" class="form-control" id="message" [(ngModel)]="model.message" name="message">
         </div>
 
-        <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid">Submit</button>
+        <button type="submit" class="btn btn-success" [disabled]="!contactForm.form.valid" appAddConfirmation
+            question="Are you sure?" (response)="onSubmit($event)">Submit</button>
     </form>
 
 </div>

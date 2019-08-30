@@ -28,6 +28,7 @@ import { NgbdModalProductFormComponent } from './components/ngbd-modal-product-f
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { AddNewProductPageComponent } from './pages/add-new-product-page/add-new-product-page.component';
 import { TranslatePipe } from './pipes/translate.pipe';
+import { AddConfirmationDirective } from './directives/add-confirmation.directive';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { TranslatePipe } from './pipes/translate.pipe';
     NgbdModalProductFormComponent,
     ProductFormComponent,
     AddNewProductPageComponent,
-    TranslatePipe
+    TranslatePipe,
+    AddConfirmationDirective
   ],
   imports: [
     BrowserModule,

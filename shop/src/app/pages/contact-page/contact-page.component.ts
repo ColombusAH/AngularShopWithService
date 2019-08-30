@@ -9,8 +9,10 @@ export class ContactPageComponent {
   model = { email: '', subject: '', message: '' };
   submitted = false;
 
-  onSubmit() {
-    this.submitted = true;
-    console.log(this.model);
+  onSubmit(userResponse: boolean) {
+    if (userResponse) {
+      this.submitted = true;
+      console.log(this.model);
+    }
   }
 }
