@@ -23,6 +23,7 @@ export class UserService implements OnInit {
         'user',
         JSON.stringify({ user: username, role: user.role })
       );
+      this._userLoggedIn = true;
       return true;
     }
     return false;
@@ -30,6 +31,7 @@ export class UserService implements OnInit {
 
   logout() {
     localStorage.removeItem('user');
+    this._userLoggedIn = false;
   }
 
   userLoggedIn(): boolean {

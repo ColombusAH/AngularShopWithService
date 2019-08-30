@@ -16,7 +16,8 @@
                     <span id="price">{{product.price | currency }}</span>
                 </div>
 
-                <app-shopping-list-product-adder-remover [product]="product" [includeCounter]="true">
+                <app-shopping-list-product-adder-remover [product]="product" [includeCounter]="true"
+                    *appShowIfPermission="'user'">
                 </app-shopping-list-product-adder-remover>
 
             </div>

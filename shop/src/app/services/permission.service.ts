@@ -16,7 +16,6 @@ export class PermissionService {
         break;
       case 'user':
         permissionConfirm = this.userService.userLoggedIn();
-        console.log({ permissionConfirm });
 
         break;
       default:
