@@ -1,5 +1,5 @@
 <div id="navbar" class="sidenav" [style.width]="isOpen  ? '250px': '0'">
-    <a href="#" class="closebtn" (click)="closeMenuBar()">&times;</a>
+    <a class="closebtn" (click)="closeMenuBar()">&times;</a>
     <div class="select__language">
         <select name="lang" id="lang" #selectLang (change)="languageSelected($event)" class="select__languages--lg">
             <option *ngFor="let lang of supportedLanguages" [value]="lang.code" class="flag">{{lang.language}}
@@ -16,7 +16,7 @@
         <a [routerLink]="['/addNewProduct']" *ngIf="user.role === 'admin'" (click)="closeMenuBar()">
             {{'Add Product' | translate}}</a>
 
-        <a [routerLink]="['/cart']" class="haveBadge" [attr.value]="cartSize">{{'Cart' | translate}}</a>
+        <a [routerLink]="['/cart']" class="haveBadge" [attr.value]="cartSize" (click)="closeMenuBar()">{{'Cart' | translate}}</a>
         <a (click)="logout()" [routerLink]="['/']">{{'Logout' | translate}}</a>
     </ng-template>
 
