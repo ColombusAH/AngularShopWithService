@@ -21,7 +21,7 @@
     </ng-template>
 
     <ng-template #loggedOut>
-        <a [routerLink]="['/login']">{{'Login' | translate}}</a>
+        <a [routerLink]="['/login']" (click)="closeMenuBar()">{{'Login' | translate}}</a>
 
     </ng-template>
 

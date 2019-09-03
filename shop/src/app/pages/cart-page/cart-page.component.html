@@ -28,7 +28,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let pi of cartService.shopingList">
+                                <tr *ngFor="let pi of shopingList">
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
                                             <img [src]="pi.product.imageUrl" alt="pi.product.title" width="70"
@@ -63,10 +63,10 @@
                         <ul class="list-unstyled mb-4">
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
                                     class="text-muted">Order Subtotal
-                                </strong><strong>{{cartService.getTotalPrice() | currency}}</strong></li>
+                                </strong><strong>{{totalPrice | currency}}</strong></li>
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong
                                     class="text-muted">Total</strong>
-                                <h5 class="font-weight-bold">{{cartService.getTotalPrice() | currency}}</h5>
+                                <h5 class="font-weight-bold">{{totalPrice | currency}}</h5>
                             </li>
                         </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
                     </div>

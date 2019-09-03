@@ -1,27 +1,32 @@
 import { UserService } from './../../services/user.service';
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
   Validators,
   AbstractControl
 } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   submited: boolean = false;
   loginSuccess: boolean = false;
-  @Output() loginSuccessEvent = new EventEmitter();
-  constructor(private userService: UserService, fb: FormBuilder) {
-    this.loginForm = fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
-    });
+  returnUrl: string;
+  constructor(
+    private userService: UserService,
+    private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    if (this.userService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
   }
 
   get usernameControl(): AbstractControl {
@@ -42,12 +47,21 @@ export class LoginPageComponent {
       );
 
       if (this.loginSuccess) {
-        this.loginSuccessEvent.emit();
+        this.router.navigate([this.returnUrl]);
       }
     }
   }
 
   setSubmited() {
     this.submited = false;
+  }
+
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 }

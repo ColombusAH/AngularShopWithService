@@ -2,13 +2,12 @@
     <div class="headerSection--full">
         <app-header (menuBarTogglerEvent)="toggleMenuBar()"></app-header>
     </div>
-    <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()"
-        (pageNavigaterEvent)="changePage($event)" [linksNames]="pagesNames" (logoutClickedEvent)="logout()">
+    <app-sidebar-menu [isOpen]="menubarMode" (onCloseMenuBar)="toggleMenuBar()">
     </app-sidebar-menu>
     <img class="img--wallBackground" src="assets/wallBackground.jpg">
 
 
-    <section class="main--Page-mainContent" [ngSwitch]="currentPage">
+    <!-- <section class="main--Page-mainContent" [ngSwitch]="currentPage">
 
         <div *ngSwitchCase="'Home'" @fade>
             <app-home></app-home>
@@ -44,5 +43,7 @@
         <div fade *ngSwitchCase="'ProductManagement'">
             <app-add-new-product-page (backButtonClickedEvent)="changePage('Home')"></app-add-new-product-page>
         </div>
-    </section>
+    </section> -->
+    <router-outlet></router-outlet>
+
 </main>
