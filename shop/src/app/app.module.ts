@@ -17,7 +17,7 @@ import { SocialLinkComponent } from './components/social-link/social-link.compon
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { ShoppingListProductAdderRemoverComponent } from './components/shopping-list-product-adder-remover/shopping-list-product-adder-remover.component';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
@@ -29,6 +29,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { AddNewProductPageComponent } from './pages/add-new-product-page/add-new-product-page.component';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { AddConfirmationDirective } from './directives/add-confirmation.directive';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { AddConfirmationDirective } from './directives/add-confirmation.directiv
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
     NgbModule,

@@ -1,4 +1,4 @@
-import { UserService } from './services/user.service';
+
 import { CartService } from './services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { fade } from './animations/fade.animation';
@@ -32,7 +32,6 @@ export class AppComponent implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private userService: UserService,
     private permissionService: PermissionService
   ) {}
 
@@ -54,7 +53,6 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.userService.logout();
     this.toggleMenuBar();
     this.userHavePermission = false;
     this.cartService.emptyCart();
@@ -63,13 +61,6 @@ export class AppComponent implements OnInit {
   loginSucess() {
     this.changePage(Page.Home);
     this.userHavePermission = this.permissionService.userHavePermission();
-  }
-  userIsLoggedIn(): boolean {
-    return this.userService.userLoggedIn();
-  }
-
-  getCartSize(): number {
-    return this.cartService.shopingListSize();
   }
 
   editProduct(product: Product) {

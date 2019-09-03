@@ -1,6 +1,6 @@
 <div class="headerContainer">
     <img class="header__menuButton--burger" src="assets/menuBurgerIcon.png" (click)="onMenuBarBtnClicked()" />
-    <ng-template [ngIf]="userLoggedIn === true">
+    <ng-template [ngIf]="user">
         <fa-icon class="haveBadge fa-2x" [icon]="faShoppingCart" [(attr.value)]="cartSize" (click)="onCartClicked()">
         </fa-icon>
     </ng-template>

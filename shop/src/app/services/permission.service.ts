@@ -10,17 +10,10 @@ export class PermissionService {
   userHavePermission(permissionRequired: string = 'admin'): boolean {
     permissionRequired = permissionRequired.toLowerCase();
     let permissionConfirm: boolean;
-    switch (permissionRequired) {
-      case 'admin':
-        permissionConfirm = this.userService.userIsAdmin();
-        break;
-      case 'user':
-        permissionConfirm = this.userService.userLoggedIn();
 
-        break;
-      default:
-        throw new Error('parameter not valid: ' + permissionRequired);
-    }
+    permissionConfirm =
+      this.userService.currentUserValue.role === permissionRequired;
+
     return permissionConfirm;
   }
 }

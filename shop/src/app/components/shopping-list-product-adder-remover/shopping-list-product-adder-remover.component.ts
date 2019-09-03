@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart.service';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-shopping-list-product-adder-remover',
@@ -12,10 +11,7 @@ export class ShoppingListProductAdderRemoverComponent implements OnInit {
   @Input() product: Product;
   @Input() includeCounter: boolean = false;
   counter: number = 0;
-  constructor(
-    private cartService: CartService,
-    private userService: UserService
-  ) {}
+  constructor(private cartService: CartService) {}
 
   addToCart() {
     this.cartService.addProduct(this.product);
@@ -28,8 +24,5 @@ export class ShoppingListProductAdderRemoverComponent implements OnInit {
 
   ngOnInit(): void {
     this.counter = this.cartService.getQuantityInShopingList(this.product);
-  }
-  toShow() {
-    return this.userService.userLoggedIn();
   }
 }

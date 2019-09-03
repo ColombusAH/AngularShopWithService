@@ -1,21 +1,27 @@
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from './../models/user.model';
 import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService implements OnInit {
+export class UserService {
   private readonly _usersList: User[];
-  private _userLoggedIn: boolean = false;
+  private _currentUserSubject: BehaviorSubject<User>;
+  public currentUserState: Observable<User>;
   constructor() {
     this._usersList = [
       new User('admin', 'admin', 'admin'),
       new User('user', 'user', 'user')
     ];
+    this._currentUserSubject = new BehaviorSubject<User>(
+      JSON.parse(localStorage.getItem('user'))
+    );
+    this.currentUserState = this._currentUserSubject.asObservable();
   }
 
   login(username: string, pass: string): boolean {
-    const user = this._usersList.find(
+    const user: User = this._usersList.find(
       u => u.username === username && u.password === pass
     );
     if (user) {
@@ -23,27 +29,18 @@ export class UserService implements OnInit {
         'user',
         JSON.stringify({ user: username, role: user.role })
       );
-      this._userLoggedIn = true;
+      this._currentUserSubject.next(user);
       return true;
     }
     return false;
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem('user');
-    this._userLoggedIn = false;
+    this._currentUserSubject.next(null);
   }
 
-  userLoggedIn(): boolean {
-    return (this._userLoggedIn = localStorage.getItem('user') !== null);
-  }
-
-  userIsAdmin(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user && (<string>user.role).toLowerCase() === 'admin';
-  }
-
-  ngOnInit(): void {
-    this._userLoggedIn = this.userLoggedIn();
+  public get currentUserValue() {
+    return this._currentUserSubject.value;
   }
 }

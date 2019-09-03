@@ -7,19 +7,21 @@
         </select>
     </div>
 
-    <a *ngFor="let linkName  of linksNames" href="#" (click)="onLinkClicked(linkName)">{{linkName | translate}}</a>
+    <a [routerLink]="['/']" routerLinkActive="active" (click)="closeMenuBar()">{{'Home' | translate}}</a>
+    <a [routerLink]="['/about']" routerLinkActive="active" (click)="closeMenuBar()">{{'About' | translate}}</a>
+    <a [routerLink]="['/products']" routerLinkActive="active" (click)="closeMenuBar()">{{'Products' | translate}}</a>
+    <a [routerLink]="['/contact']" routerLinkActive="active" (click)="closeMenuBar()">{{'Contact' | translate}}</a>
 
-    <ng-template [ngIf]="userLoggedIn" [ngIfElse]="loggedOut">
-        <a href="#" *ngIf="userHavePermission" (click)="onLinkClicked('ProductManagement')">
+    <ng-template [ngIf]="user" [ngIfElse]="loggedOut">
+        <a [routerLink]="['/addNewProduct']" *ngIf="user.role === 'admin'" (click)="closeMenuBar()">
             {{'Add Product' | translate}}</a>
 
-        <a href="#" class="haveBadge" [(attr.value)]="cartSize"
-            (click)="onLinkClicked('Cart')">{{'Cart' | translate}}</a>
-        <a href="#" (click)="logoutClicked()">{{'Logout' | translate}}</a>
+        <a [routerLink]="['/cart']" class="haveBadge" [attr.value]="cartSize">{{'Cart' | translate}}</a>
+        <a (click)="logout()" [routerLink]="['/']">{{'Logout' | translate}}</a>
     </ng-template>
 
     <ng-template #loggedOut>
-        <a href="#" (click)="onLinkClicked('Login')">{{'Login' | translate}}</a>
+        <a [routerLink]="['/login']">{{'Login' | translate}}</a>
 
     </ng-template>
 
