@@ -13,12 +13,13 @@ export class ProductsPageComponent implements OnInit {
   @Output() productSelectedEvent = new EventEmitter<Product>();
   @Output() onEditProductEvent = new EventEmitter<Product>();
   categoriesList: Category[];
+  choosedCategory: Category;
   productList$: Observable<Product[]>;
 
   constructor(private productsService: ProductsService) {}
 
   categorySelected(category: Category) {
-    this.productsService.getProductsByCategory(category);
+    this.choosedCategory = category;
   }
 
   editProductClicked(product: Product) {
@@ -26,8 +27,8 @@ export class ProductsPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productList$ = this.productsService.fetchAllProducts();
-
     this.categoriesList = this.productsService.getAllCategories();
+    this.productList$ = this.productsService.fetchAllProducts();
+    this.choosedCategory = this.categoriesList[0];
   }
 }

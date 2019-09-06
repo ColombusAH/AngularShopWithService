@@ -15,8 +15,8 @@ export class AddNewProductPageComponent {
     this.location.back();
   }
 
-  setDirty() {
-    this.dirtyForm = true;
+  setDirty(state: boolean) {
+    this.dirtyForm = state;
   }
 
   canDeactivate() {

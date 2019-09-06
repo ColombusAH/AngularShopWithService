@@ -93,5 +93,6 @@ export class ProductFormComponent implements OnInit {
     }
 
     this.submited = false;
+    this.formDirtyEvent.emit(false);
   }
 }
