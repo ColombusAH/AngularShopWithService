@@ -2,9 +2,8 @@ import { Product } from './../models/product.model';
 import { Injectable } from '@angular/core';
 import { Category } from '../models/category.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { of, Observable, BehaviorSubject, throwError } from 'rxjs';
+import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import * as _ from 'lodash';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,16 +20,6 @@ export class ProductsService {
     this._productsSubject = new BehaviorSubject<Product[]>([]);
     this.productsState$ = this._productsSubject.asObservable();
 
-    // this.http
-    //   .get<Product[]>(this.baseUrl + '/products.json')
-    //   .pipe(
-    //     map(products => {
-    //       this._Allproducts = products;
-    //       this._productsSubject.next(products);
-    //     })
-    //   )
-    //   .subscribe();
-
     this._categoriesList = [
       new Category('0', 'All'),
       new Category('1', 'man'),
@@ -42,7 +31,7 @@ export class ProductsService {
     return this.http.get<Product[]>(this.baseUrl + '/products.json');
   }
 
-  setProductsByCategory(category: Category): void {
+  getProductsByCategory(category: Category): void {
     const productByCategory = this._Allproducts.filter(
       product => category.title === 'All' || product.categoryId === category.id
     );

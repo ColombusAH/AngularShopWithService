@@ -18,7 +18,7 @@ export class ProductsPageComponent implements OnInit {
   constructor(private productsService: ProductsService) {}
 
   categorySelected(category: Category) {
-    this.productsService.setProductsByCategory(category);
+    this.productsService.getProductsByCategory(category);
   }
 
   editProductClicked(product: Product) {

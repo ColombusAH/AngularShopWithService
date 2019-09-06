@@ -112,14 +112,6 @@
     "description": "Beautiful wintage brown golden watch "
   },
   {
-    "id": "15",
-    "categoryId": "1",
-    "imageUrl": "assets/products/brown-alcadus-man.jpeg",
-    "title": "brown alcadus",
-    "price": 800,
-    "description": "Analog brown colored watch with beautifull contour"
-  },
-  {
     "id": "16",
     "categoryId": "1",
     "imageUrl": "assets/products/black-smart-man.jpeg",
