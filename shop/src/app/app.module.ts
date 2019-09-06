@@ -34,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailsCartComponent } from './components/product-details-cart/product-details-cart.component';
 import { CategoryProductFilterPipe } from './pipes/category-product-filter.pipe';
 import { IdProductFilterPipe } from './pipes/id-product-filter.pipe';
-
+import { NgbdAlertCloseable } from './components/success-popup/success-popup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +65,8 @@ import { IdProductFilterPipe } from './pipes/id-product-filter.pipe';
     AddConfirmationDirective,
     ProductDetailsCartComponent,
     CategoryProductFilterPipe,
-    IdProductFilterPipe
+    IdProductFilterPipe,
+    NgbdAlertCloseable
   ],
   imports: [
     BrowserModule,

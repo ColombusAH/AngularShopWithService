@@ -3,11 +3,13 @@ import { ProductsService } from './../../services/products.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/product.model';
+import { fade } from '../../animations/fade.animation';
 
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
-  styleUrls: ['./product-form.component.css']
+  styleUrls: ['./product-form.component.css'],
+  animations: [fade]
 })
 export class ProductFormComponent implements OnInit {
   productForm: FormGroup;
@@ -17,6 +19,7 @@ export class ProductFormComponent implements OnInit {
   @Output() formDirtyEvent = new EventEmitter<boolean>();
   initialCategoryValue: string;
   submited: boolean;
+  success: boolean = true;
 
   constructor(fb: FormBuilder, private productService: ProductsService) {
     this.productForm = fb.group({
@@ -73,6 +76,7 @@ export class ProductFormComponent implements OnInit {
     this.initForm();
     this.productForm.reset();
     this.submited = true;
+    this.success = true;
   }
 
   initForm(): void {

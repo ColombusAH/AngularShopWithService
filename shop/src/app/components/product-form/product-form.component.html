@@ -1,6 +1,10 @@
 <div class="container">
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
 
+        <div *ngIf="success" @fade>
+            <app-success-popup [message]="'product successfully added!'"></app-success-popup>
+        </div>
+
         <div class="form-group">
             <label for="category">Select Category</label>
             <select class="form-control" id="category" formControlName="category" (change)="formDirty()">
