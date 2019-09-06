@@ -1,12 +1,13 @@
 <ng-template #content let-modal>
     <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">Product update</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <button type="button" class="close" aria-label="Close" (click)="canDeactivate()">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        <app-product-form [product]="product" (formSubmitedEvent)="modal.dismiss('')">
+        <app-product-form [product]="product" (formSubmitedEvent)="modal.dismiss('')"
+            (formDirtyEvent)="setDirty($event)">
         </app-product-form>
     </div>
 </ng-template>
