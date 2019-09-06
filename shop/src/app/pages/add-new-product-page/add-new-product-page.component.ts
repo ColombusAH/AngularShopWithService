@@ -1,4 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-add-new-product-page',
@@ -6,9 +7,22 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./add-new-product-page.component.css']
 })
 export class AddNewProductPageComponent {
-  @Output() backButtonClickedEvent = new EventEmitter();
+  dirtyForm: boolean = false;
+
+  constructor(private location: Location) {}
 
   backButtonClicked() {
-    this.backButtonClickedEvent.emit();
+    this.location.back();
+  }
+
+  setDirty() {
+    this.dirtyForm = true;
+  }
+
+  canDeactivate() {
+    if (this.dirtyForm) {
+      return confirm('Discard all Changes?');
+    }
+    return true;
   }
 }

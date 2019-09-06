@@ -6,3 +6,7 @@
 .middle {
   text-align: center;
 }
+
+ul a {
+  text-decoration-color: white; 
+}

@@ -3,7 +3,7 @@
 
         <div class="form-group">
             <label for="category">Select Category</label>
-            <select class="form-control" id="category" formControlName="category">
+            <select class="form-control" id="category" formControlName="category" (change)="formDirty()">
                 <option disabled value="{{initialCategoryValue}}" selected={{!submited}}>{{initialCategoryValue}}
                 </option>
                 <option *ngFor="let c of categories" [ngValue]="c">{{ c.title }}</option>
@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <label for="imageUrl">Image</label>
-            <input type="text" class="form-control" id="imageUrl" aria-describedby="imageHelp"
+            <input type="text" class="form-control" id="imageUrl" aria-describedby="imageHelp" (change)="formDirty()"
                 placeholder="Enter image url" formControlName="imageUrl">
             <div *ngIf="haveError('imageUrl')" class="alert alert-danger" role="alert">
                 Image url is required
@@ -22,14 +22,16 @@
         </div>
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="title" formControlName="title">
+            <input type="text" class="form-control" id="title" placeholder="title" formControlName="title"
+                (change)="formDirty()">
             <div *ngIf="haveError('title')" class="alert alert-danger" role="alert">
                 titl is required
             </div>
         </div>
         <div class="form-group">
             <label for="price">Price</label>
-            <input type="number" class="form-control" id="price" placeholder="Price" formControlName="price">
+            <input type="number" class="form-control" id="price" placeholder="Price" formControlName="price"
+                (change)="formDirty()">
             <div *ngIf="haveError('price')" class="alert alert-danger" role="alert">
                 Price is required
             </div>
@@ -40,7 +42,8 @@
 
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" rows="5" formControlName="description"></textarea>
+            <textarea class="form-control" id="description" rows="5" formControlName="description"
+                (change)="formDirty()"></textarea>
         </div>
         <div class="container center">
             <app-ngbd-modal-confirm [disabled]="!productForm.valid" (okButtonClicked)="onSubmit()">

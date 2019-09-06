@@ -14,6 +14,7 @@ export class ProductFormComponent implements OnInit {
   categories: Category[];
   @Input() product: Product = null;
   @Output() formSubmitedEvent = new EventEmitter();
+  @Output() formDirtyEvent = new EventEmitter<boolean>();
   initialCategoryValue: string;
   submited: boolean;
 
@@ -54,6 +55,9 @@ export class ProductFormComponent implements OnInit {
     this.initForm();
   }
 
+  formDirty() {
+    this.formDirtyEvent.emit(true);
+  }
   onSubmit() {
     const data = this.productForm.value;
     this.product.categoryId =

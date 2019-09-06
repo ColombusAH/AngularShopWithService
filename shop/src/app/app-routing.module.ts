@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { ProductDetailsComponent } from './pages/product-details-page/product-details.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,6 +10,7 @@ import { AddNewProductPageComponent } from './pages/add-new-product-page/add-new
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ProductDetailsCartComponent } from './components/product-details-cart/product-details-cart.component';
+import { CanDeactivateGuard } from './guards/can-deactivate.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,10 +21,15 @@ const routes: Routes = [
     component: ProductDetailsComponent
   },
   { path: 'contact', component: ContactPageComponent },
-  { path: 'addNewProduct', component: AddNewProductPageComponent },
+  {
+    path: 'addNewProduct',
+    component: AddNewProductPageComponent,
+    canDeactivate: [CanDeactivateGuard]
+  },
   {
     path: 'cart',
     component: CartPageComponent,
+    canActivate: [AuthGuard],
     children: [{ path: 'detail/:id', component: ProductDetailsCartComponent }]
   },
   { path: 'login', component: LoginPageComponent },
