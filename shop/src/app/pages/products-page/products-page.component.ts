@@ -21,10 +21,6 @@ export class ProductsPageComponent implements OnInit {
     this.productsService.setProductsByCategory(category);
   }
 
-  productSelected(product: Product) {
-    this.productSelectedEvent.emit(product);
-  }
-
   editProductClicked(product: Product) {
     this.onEditProductEvent.emit(product);
   }

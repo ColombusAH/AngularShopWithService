@@ -1,4 +1,4 @@
-import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ProductDetailsComponent } from './pages/product-details-page/product-details.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home-page/home.component';
@@ -8,7 +8,7 @@ import { ProductsPageComponent } from './pages/products-page/products-page.compo
 import { AddNewProductPageComponent } from './pages/add-new-product-page/add-new-product-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { ProductResolverGuard } from './guards/product-resolver.guard';
+import { ProductDetailsCartComponent } from './components/product-details-cart/product-details-cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,12 +16,15 @@ const routes: Routes = [
   { path: 'products', component: ProductsPageComponent },
   {
     path: 'products/:id',
-    component: ProductDetailsComponent,
-    resolve: { product: ProductResolverGuard }
+    component: ProductDetailsComponent
   },
   { path: 'contact', component: ContactPageComponent },
   { path: 'addNewProduct', component: AddNewProductPageComponent },
-  { path: 'cart', component: CartPageComponent },
+  {
+    path: 'cart',
+    component: CartPageComponent,
+    children: [{ path: 'detail/:id', component: ProductDetailsCartComponent }]
+  },
   { path: 'login', component: LoginPageComponent },
   { path: '**', redirectTo: '/' }
 ];

@@ -4,7 +4,6 @@
     <app-category-selector [categoriesList]="categoriesList" (categorySelectedEvent)="categorySelected($event)">
     </app-category-selector>
 
-    <app-products-list [products]="productList$ | async" (onProductSelectedEvent)="productSelected($event)"
-        (onEditProductEvent)="editProductClicked($event)">
+    <app-products-list [products]="productList$ | async" (onEditProductEvent)="editProductClicked($event)">
     </app-products-list>
 </div>

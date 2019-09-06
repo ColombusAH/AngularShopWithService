@@ -1,0 +1,37 @@
+.productDetails--row {
+  display: flex;
+}
+
+.productDetails__img {
+  width: 30%;
+  height: 25%;
+}
+
+h3 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2em;
+}
+#price {
+  margin-left: 1em;
+}
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.closebtn:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}

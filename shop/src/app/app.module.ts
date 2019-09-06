@@ -8,7 +8,7 @@ import { ProductComponent } from './components/product/product.component';
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
 import { CategorySelectorComponent } from './components/category-selector/category-selector.component';
 import { SummaryPipe } from './pipes/summary.pipe';
-import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ProductDetailsComponent } from './pages/product-details-page/product-details.component';
 import { HomeComponent } from './pages/home-page/home.component';
 import { AboutComponent } from './pages/about-page/about.component';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
@@ -31,6 +31,7 @@ import { TranslatePipe } from './pipes/translate.pipe';
 import { AddConfirmationDirective } from './directives/add-confirmation.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailsCartComponent } from './components/product-details-cart/product-details-cart.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductFormComponent,
     AddNewProductPageComponent,
     TranslatePipe,
-    AddConfirmationDirective
+    AddConfirmationDirective,
+    ProductDetailsCartComponent
   ],
   imports: [
     BrowserModule,

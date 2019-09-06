@@ -21,15 +21,15 @@ export class ProductsService {
     this._productsSubject = new BehaviorSubject<Product[]>([]);
     this.productsState$ = this._productsSubject.asObservable();
 
-    this.http
-      .get<Product[]>(this.baseUrl + '/products.json')
-      .pipe(
-        map(products => {
-          this._Allproducts = products;
-          this._productsSubject.next(products);
-        })
-      )
-      .subscribe();
+    // this.http
+    //   .get<Product[]>(this.baseUrl + '/products.json')
+    //   .pipe(
+    //     map(products => {
+    //       this._Allproducts = products;
+    //       this._productsSubject.next(products);
+    //     })
+    //   )
+    //   .subscribe();
 
     this._categoriesList = [
       new Category('0', 'All'),
@@ -39,7 +39,7 @@ export class ProductsService {
   }
 
   fetchAllProducts(): Observable<Product[]> {
-    return this.productsState$;
+    return this.http.get<Product[]>(this.baseUrl + '/products.json');
   }
 
   setProductsByCategory(category: Category): void {

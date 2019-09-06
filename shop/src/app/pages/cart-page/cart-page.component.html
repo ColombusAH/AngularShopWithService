@@ -31,8 +31,9 @@
                                 <tr *ngFor="let pi of shopingList">
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
-                                            <img [src]="pi.product.imageUrl" alt="pi.product.title" width="70"
-                                                class="img-fluid rounded shadow-sm">
+                                            <a [routerLink]="['detail', pi.product.id]"><img [src]="pi.product.imageUrl"
+                                                    alt="pi.product.title" width="70"
+                                                    class="img-fluid rounded shadow-sm"></a>
                                             <div class="ml-3 d-inline-block align-middle">
                                                 <h5 class="mb-0"> <span href="#"
                                                         class="text-dark d-inline-block align-middle">{{pi.product.title | titlecase}}</span>
@@ -51,7 +52,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <!-- End -->
+                    <router-outlet></router-outlet>
                 </div>
             </div>
 
@@ -68,7 +69,7 @@
                                     class="text-muted">Total</strong>
                                 <h5 class="font-weight-bold">{{totalPrice | currency}}</h5>
                             </li>
-                        </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+                        </ul><a class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
                     </div>
                 </div>
             </div>
