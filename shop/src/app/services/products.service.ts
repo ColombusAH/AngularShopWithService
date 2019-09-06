@@ -27,6 +27,7 @@ export class ProductsService {
     ];
   }
 
+  // TODO: change implementation when integrate with real api
   fetchAllProducts(): Observable<Product[]> {
     if (this._productsSubject.value.length === 0) {
       this.http.get<Product[]>(this.baseUrl + '/products.json').subscribe(

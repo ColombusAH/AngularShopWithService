@@ -7,7 +7,8 @@
         </select>
     </div>
 
-    <a [routerLink]="['/']" routerLinkActive="active" (click)="closeMenuBar()">{{'Home' | translate}}</a>
+    <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}" (click)="closeMenuBar()">{{'Home' | translate}}</a>
     <a [routerLink]="['/about']" routerLinkActive="active" (click)="closeMenuBar()">{{'About' | translate}}</a>
     <a [routerLink]="['/products']" routerLinkActive="active" (click)="closeMenuBar()">{{'Products' | translate}}</a>
     <a [routerLink]="['/contact']" routerLinkActive="active" (click)="closeMenuBar()">{{'Contact' | translate}}</a>
@@ -16,7 +17,8 @@
         <a [routerLink]="['/addNewProduct']" *ngIf="user.role === 'admin'" (click)="closeMenuBar()">
             {{'Add Product' | translate}}</a>
 
-        <a [routerLink]="['/cart']" class="haveBadge" [attr.value]="cartSize" (click)="closeMenuBar()">{{'Cart' | translate}}</a>
+        <a [routerLink]="['/cart']" class="haveBadge" [attr.value]="cartSize"
+            (click)="closeMenuBar()">{{'Cart' | translate}}</a>
         <a (click)="logout()" [routerLink]="['/']">{{'Logout' | translate}}</a>
     </ng-template>
 
