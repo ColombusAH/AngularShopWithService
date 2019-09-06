@@ -1,7 +1,8 @@
 import { ProductsService } from '../../services/products.service';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { Category } from 'src/app/models/category.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-products-page',
@@ -12,21 +13,25 @@ export class ProductsPageComponent implements OnInit {
   @Output() productSelectedEvent = new EventEmitter<Product>();
   @Output() onEditProductEvent = new EventEmitter<Product>();
   categoriesList: Category[];
-  productList: Product[];
+  productList$: Observable<Product[]>;
 
   constructor(private productsService: ProductsService) {}
 
   categorySelected(category: Category) {
-    this.productList = this.productsService.getProductsByCategory(category);
+    this.productsService.setProductsByCategory(category);
   }
+
   productSelected(product: Product) {
     this.productSelectedEvent.emit(product);
   }
+
   editProductClicked(product: Product) {
     this.onEditProductEvent.emit(product);
   }
+
   ngOnInit() {
-    this.productList = this.productsService.getAllProducts();
+    this.productList$ = this.productsService.fetchAllProducts();
+
     this.categoriesList = this.productsService.getAllCategories();
   }
 }

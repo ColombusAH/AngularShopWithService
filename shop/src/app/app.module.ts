@@ -30,6 +30,7 @@ import { AddNewProductPageComponent } from './pages/add-new-product-page/add-new
 import { TranslatePipe } from './pipes/translate.pipe';
 import { AddConfirmationDirective } from './directives/add-confirmation.directive';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { AppRoutingModule } from './app-routing.module';
     FontAwesomeModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
