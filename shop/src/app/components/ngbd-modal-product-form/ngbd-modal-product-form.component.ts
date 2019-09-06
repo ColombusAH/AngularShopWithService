@@ -26,6 +26,8 @@ export class NgbdModalProductFormComponent {
       if (ans) {
         this.modalService.dismissAll();
       }
+    } else {
+      this.modalService.dismissAll();
     }
   }
 }
