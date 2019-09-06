@@ -4,7 +4,6 @@ import { Category } from '../models/category.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import * as _ from 'lodash';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -29,9 +28,16 @@ export class ProductsService {
   }
 
   fetchAllProducts(): Observable<Product[]> {
-    return this.http
-      .get<Product[]>(this.baseUrl + '/products.json')
-      .pipe(map(prods => (this._Allproducts = prods)));
+    if (this._productsSubject.value.length === 0) {
+      this.http.get<Product[]>(this.baseUrl + '/products.json').subscribe(
+        prods => {
+          this._Allproducts = prods;
+          this._productsSubject.next(prods);
+        },
+        error => this.handleError(error)
+      );
+    }
+    return this.productsState$;
   }
   getAllCategories() {
     return this._categoriesList;
