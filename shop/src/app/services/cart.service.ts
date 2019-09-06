@@ -22,11 +22,12 @@ export class CartService {
   private _totalPrice: number = 0;
 
   constructor() {
-    this._productItems = [];
+    this._productItems =
+      (JSON.parse(localStorage.getItem('cart')) as ProductItem[]) || [];
     this._shoppingListSubject = new BehaviorSubject({
       productsList: this._productItems,
-      size: this._size,
-      totalPrice: this._totalPrice
+      size: this.getTotalSize(),
+      totalPrice: this.getTotalPrice()
     });
     this.shoppingListState = this._shoppingListSubject.asObservable();
   }
@@ -68,6 +69,7 @@ export class CartService {
       size: this._size,
       totalPrice: this._totalPrice
     });
+    localStorage.setItem('cart', JSON.stringify(this._productItems));
   }
 
   emptyCart(): void {
@@ -86,5 +88,17 @@ export class CartService {
     } else {
       return this._productItems[index].quantity;
     }
+  }
+
+  getTotalSize(): number {
+    let size = 0;
+    this._productItems.forEach(pi => (size += pi.quantity));
+    return size;
+  }
+
+  getTotalPrice(): number {
+    let price = 0;
+    this._productItems.forEach(pi => (price += pi.quantity * pi.product.price));
+    return price;
   }
 }
