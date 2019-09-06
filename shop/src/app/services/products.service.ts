@@ -19,7 +19,7 @@ export class ProductsService {
   constructor(private http: HttpClient) {
     this._productsSubject = new BehaviorSubject<Product[]>([]);
     this.productsState$ = this._productsSubject.asObservable();
-
+    this.fetchAllProducts();
     this._categoriesList = [
       new Category('0', 'All'),
       new Category('1', 'man'),

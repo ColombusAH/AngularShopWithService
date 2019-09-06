@@ -19,7 +19,7 @@ export class ProductFormComponent implements OnInit {
   @Output() formDirtyEvent = new EventEmitter<boolean>();
   initialCategoryValue: string;
   submited: boolean;
-  success: boolean = true;
+  success: boolean = false;
 
   constructor(fb: FormBuilder, private productService: ProductsService) {
     this.productForm = fb.group({
@@ -77,6 +77,7 @@ export class ProductFormComponent implements OnInit {
     this.productForm.reset();
     this.submited = true;
     this.success = true;
+    setTimeout(() => (this.success = false), 3000);
   }
 
   initForm(): void {
