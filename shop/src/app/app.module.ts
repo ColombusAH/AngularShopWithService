@@ -33,6 +33,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailsCartComponent } from './components/product-details-cart/product-details-cart.component';
 import { CategoryProductFilterPipe } from './pipes/category-product-filter.pipe';
+import { IdProductFilterPipe } from './pipes/id-product-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { CategoryProductFilterPipe } from './pipes/category-product-filter.pipe'
     TranslatePipe,
     AddConfirmationDirective,
     ProductDetailsCartComponent,
-    CategoryProductFilterPipe
+    CategoryProductFilterPipe,
+    IdProductFilterPipe
   ],
   imports: [
     BrowserModule,

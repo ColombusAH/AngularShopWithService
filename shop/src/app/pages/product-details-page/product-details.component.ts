@@ -12,9 +12,9 @@ import { Location } from '@angular/common';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit, OnDestroy {
-  product: Product;
   paramMapsubscription: Subscription;
   prodcutState$: Observable<Product[]>;
+  productID: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,11 +29,8 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     //Todo: implementation should change after using real api
     this.paramMapsubscription = this.route.paramMap.subscribe(params => {
-      let id = params.get('id');
-      this.prodcutState$ = this.productService.fetchAllProducts().pipe(take(1));
-      this.prodcutState$.subscribe(products => {
-        this.product = products.find(p => p.id === id);
-      });
+      this.productID = params.get('id');
+      this.prodcutState$ = this.productService.fetchAllProducts();
     });
   }
 
