@@ -1,0 +1,29 @@
+<div class="container center">
+
+    <div class="alert alert-warning" role="alert" *ngIf="!loginSuccess && submited">
+        username or password invalid
+    </div>
+    <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">username</label>
+            <input type="text" class="form-control" formControlName="username" id="username" placeholder="username"
+                (focus)="setSubmited()">
+            <div *ngIf="usernameControl.invalid && (usernameControl.dirty || usernameControl.touched || submited)"
+                class="alert alert-danger" role="alert">
+                username is required
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password"
+                (focus)="setSubmited()">
+            <div *ngIf="passwordControl.invalid && (passwordControl.dirty || passwordControl.touched || submited)"
+                class="alert alert-danger" role="alert">
+                password is required
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+    </form>
+
+</div>
