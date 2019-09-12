@@ -1,14 +1,9 @@
-import { CartService } from './services/cart.service';
-import { Component, OnInit } from '@angular/core';
-import { fade } from './animations/fade.animation';
-import { Product } from './models/product.model';
-import { PermissionService } from './services/permission.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations: [fade]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'shop';

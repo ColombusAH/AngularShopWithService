@@ -1,0 +1,46 @@
+<div id="navbar" class="sidenav" [style.width]="isOpen  ? '250px': '0'">
+    <a class="closebtn" (click)="closeMenuBar()">&times;</a>
+    <div class="select__language">
+        <select name="lang" id="lang" #selectLang (change)="languageSelected($event)" class="select__languages--lg">
+            <option *ngFor="let lang of supportedLanguages" [value]="lang.code" class="flag">{{lang.language}}
+            </option>
+        </select>
+    </div>
+
+    <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+true}" (click)="closeMenuBar()">{{'Home' | translate}}</a>
+    <a [routerLink]="['/about']" routerLinkActive="active" (click)="closeMenuBar()">{{'About' | translate}}</a>
+    <a [routerLink]="['/products']" routerLinkActive="active" (click)="closeMenuBar()">{{'Products' | translate}}</a>
+    <a [routerLink]="['/contact']" routerLinkActive="active" (click)="closeMenuBar()">{{'Contact' | translate}}</a>
+
+    <ng-template [ngIf]="user" [ngIfElse]="loggedOut">
+        <a [routerLink]="['/products/addNewProduct']" *ngIf="user.role === 'admin'" (click)="closeMenuBar()">
+            {{'Add Product' | translate}}</a>
+
+        <a [routerLink]="['/cart']" class="haveBadge" [attr.value]="cartSize"
+            (click)="closeMenuBar()">{{'Cart' | translate}}</a>
+        <a (click)="logout()" [routerLink]="['/']">{{'Logout' | translate}}</a>
+    </ng-template>
+
+    <ng-template #loggedOut>
+        <a [routerLink]="['/login']" (click)="closeMenuBar()">{{'Login' | translate}}</a>
+
+    </ng-template>
+
+
+    <div class="navbar__socialIcon--end">
+        <app-social-link>
+            <a #link href="https://www.facebook.com/" class="alink">
+                <img alt="Facebook" src="assets/socialIcons/facebook.png" class="image--link">
+            </a>
+            <a #link href="https://www.github.com/" class="alink">
+                <img alt="Github" src="assets/socialIcons/github.png" class="image--link">
+            </a>
+
+            <a #link href="mailto: abc@example.com" class="alink">
+                <img alt="Mail" src="assets/socialIcons/mail.png" class="image--link">
+            </a>
+        </app-social-link>
+
+    </div>
+</div>

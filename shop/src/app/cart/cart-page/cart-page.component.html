@@ -1,0 +1,79 @@
+<div class="px-4 px-lg-0">
+    <div class="container text-white py-5 text-center">
+        <h1 class="display-4">Shopping cart</h1>
+    </div>
+
+    <div class="pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+                    <!-- Shopping cart table -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="border-0 bg-light">
+                                        <div class="p-2 px-3 text-uppercase">Product</div>
+                                    </th>
+                                    <th scope="col" class="border-0 bg-light">
+                                        <div class="py-2 text-uppercase">Price</div>
+                                    </th>
+                                    <th scope="col" class="border-0 bg-light">
+                                        <div class="py-2 text-uppercase middle">Quantity</div>
+                                    </th>
+                                    <th scope="col" class="border-0 bg-light">
+                                        <div class="py-2 text-uppercase middle">Add / Remove</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let pi of shopingList">
+                                    <th scope="row" class="border-0">
+                                        <div class="p-2">
+                                            <a [routerLink]="['details', pi.product.id]"><img
+                                                    [src]="pi.product.imageUrl" alt="pi.product.title" width="70"
+                                                    class="img-fluid rounded shadow-sm"></a>
+                                            <div class="ml-3 d-inline-block align-middle">
+                                                <h5 class="mb-0"> <span href="#"
+                                                        class="text-dark d-inline-block align-middle">{{pi.product.title | titlecase}}</span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <td class="border-0 align-middle"><strong>{{pi.product.price | currency}}</strong>
+                                    </td>
+                                    <td class="border-0 align-middle middle"><strong>{{pi.quantity}}</strong></td>
+                                    <td class="border-0 align-middle middle">
+                                        <app-shopping-list-product-adder-remover [product]="pi.product">
+                                        </app-shopping-list-product-adder-remover>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+
+            <div class="row py-5 p-4 bg-white rounded shadow-sm centered">
+                <div class="col-lg-6">
+                    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                    <div class="p-4">
+                        <p class="font-italic mb-4"><strong> Hopping that you have a good experience</strong></p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong
+                                    class="text-muted">Order Subtotal
+                                </strong><strong>{{totalPrice | currency}}</strong></li>
+                            <li class="d-flex justify-content-between py-3 border-bottom"><strong
+                                    class="text-muted">Total</strong>
+                                <h5 class="font-weight-bold">{{totalPrice | currency}}</h5>
+                            </li>
+                        </ul><button type="button" class="btn btn-secondary btn-lg btn-block">Check out</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
