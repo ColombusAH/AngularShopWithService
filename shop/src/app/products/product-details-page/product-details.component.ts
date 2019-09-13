@@ -29,7 +29,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
     //Todo: implementation should change after using real api
     this.paramMapsubscription = this.route.paramMap.subscribe(params => {
       this.productID = params.get('id');
-      this.prodcutState$ = this.productService.fetchAllProducts();
+      this.prodcutState$ = this.productService.productsState$;
     });
   }
 

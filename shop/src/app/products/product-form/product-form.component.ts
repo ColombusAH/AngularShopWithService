@@ -50,10 +50,13 @@ export class ProductFormComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    this.categories = this.productService
-      .getAllCategories()
-      .filter(c => c.title.toLowerCase() !== 'all');
+  async ngOnInit() {
+    try {
+      this.categories = await this.productService.getAllCategories();
+      this.categories = this.categories.filter(
+        c => c.title.toLowerCase() !== 'all'
+      );
+    } catch (error) {}
 
     this.initForm();
   }

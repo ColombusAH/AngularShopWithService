@@ -33,7 +33,7 @@ export class ProductDetailsCartComponent implements OnInit, OnDestroy {
     //Todo: implementation should change after using real api
     this.paramMapsubscription = this.route.paramMap.subscribe(params => {
       let id = params.get('id');
-      this.prodcutState$ = this.productService.fetchAllProducts().pipe(take(1));
+      this.prodcutState$ = this.productService.productsState$.pipe(take(1));
       this.prodcutState$.subscribe(products => {
         this.product = products.find(p => p.id === id);
       });

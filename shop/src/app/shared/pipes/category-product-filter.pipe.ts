@@ -9,7 +9,8 @@ export class CategoryProductFilterPipe implements PipeTransform {
   transform(products: Product[], category: Category): Product[] {
     if (products) {
       return products.filter(
-        p => category.title === 'All' || p.categoryId === category.id
+        p =>
+          category.title.toLowerCase() === 'all' || p.categoryId === category.id
       );
     }
     return products;

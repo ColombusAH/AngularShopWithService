@@ -26,9 +26,9 @@ export class ProductsPageComponent implements OnInit {
     this.onEditProductEvent.emit(product);
   }
 
-  ngOnInit() {
-    this.categoriesList = this.productsService.getAllCategories();
-    this.productList$ = this.productsService.fetchAllProducts();
+  async ngOnInit() {
+    this.categoriesList = await this.productsService.getAllCategories();
+    this.productList$ = this.productsService.productsState$;
     this.choosedCategory = this.categoriesList[0];
   }
 }

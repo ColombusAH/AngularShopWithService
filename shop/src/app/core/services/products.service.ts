@@ -10,7 +10,6 @@ import * as _ from 'lodash';
 })
 export class ProductsService {
   baseUrl: string = 'assets/data';
-  private _categoriesList: Category[];
   private _Allproducts: Product[];
 
   private _productsSubject: BehaviorSubject<Product[]>;
@@ -20,30 +19,22 @@ export class ProductsService {
     this._productsSubject = new BehaviorSubject<Product[]>([]);
     this.productsState$ = this._productsSubject.asObservable();
     this.fetchAllProducts();
-    this._categoriesList = [
-      new Category('0', 'All'),
-      new Category('1', 'man'),
-      new Category('2', 'woman')
-    ];
-
-    console.log(this._categoriesList);
   }
 
   // TODO: change implementation when integrate with real api
-  fetchAllProducts(): Observable<Product[]> {
+  async fetchAllProducts() {
     if (this._productsSubject.value.length === 0) {
-      this.http.get<Product[]>(this.baseUrl + '/products.json').subscribe(
-        prods => {
-          this._Allproducts = prods;
-          this._productsSubject.next(prods);
-        },
-        error => this.handleError(error)
-      );
+      this._Allproducts = await this.http
+        .get<Product[]>(this.baseUrl + '/products.json')
+        .toPromise();
+      this._productsSubject.next(this._Allproducts);
     }
-    return this.productsState$;
   }
+
   getAllCategories() {
-    return [...this._categoriesList];
+    return this.http
+      .get<Product[]>(this.baseUrl + '/categories.json')
+      .toPromise();
   }
 
   addToproducts(product: Product) {

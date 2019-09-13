@@ -15,6 +15,6 @@ export class HomeComponent implements OnInit {
   constructor(private productService: ProductsService) {}
 
   ngOnInit() {
-    this.productList$ = this.productService.fetchAllProducts();
+    this.productList$ = this.productService.productsState$;
   }
 }
