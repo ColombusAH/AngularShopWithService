@@ -11,8 +11,8 @@ export class UserService {
   public currentUserState: Observable<User>;
   constructor() {
     this._usersList = [
-      new User('admin', 'admin', 'admin'),
-      new User('user', 'user', 'user')
+      { username: 'admin', password: 'admin', role: 'admin' },
+      { username: 'user', password: 'user', role: 'user' }
     ];
     this._currentUserSubject = new BehaviorSubject<User>(
       JSON.parse(localStorage.getItem('user'))

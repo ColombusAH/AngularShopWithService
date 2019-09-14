@@ -86,7 +86,14 @@ export class ProductFormComponent implements OnInit {
   initForm(): void {
     if (!this.product) {
       this.initialCategoryValue = 'Choose Category';
-      this.product = new Product('', '', '', '', -1, '');
+      this.product = {
+        id: '',
+        categoryId: '',
+        imageUrl: '',
+        title: '',
+        price: -1,
+        description: ''
+      };
     } else {
       this.initialCategoryValue = this.categories.find(
         c => this.product.categoryId === c.id

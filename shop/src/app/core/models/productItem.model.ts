@@ -1,4 +1,5 @@
 import { Product } from './product.model';
-export class ProductItem {
-  constructor(public product: Product, public quantity: number = 1) {}
+export interface ProductItem {
+  product: Product;
+  quantity: number;
 }

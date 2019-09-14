@@ -49,7 +49,7 @@ export class CartService {
       pi => pi.product.id === product.id
     );
     if (index === -1) {
-      this.cart.productsList.push(new ProductItem(product));
+      this.cart.productsList.push({ product, quantity: 1 });
     } else {
       this.cart.productsList[index].quantity += 1;
     }
