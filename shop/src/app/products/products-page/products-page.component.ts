@@ -1,7 +1,7 @@
 import { ProductsService } from '../../core/services/products.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/core/models/product.model';
-import { Category } from 'src/app/core/models/category.model';
+import { ICategory } from 'src/app/core/models/category.model';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,13 +12,13 @@ import { Observable } from 'rxjs';
 export class ProductsPageComponent implements OnInit {
   @Output() productSelectedEvent = new EventEmitter<Product>();
   @Output() onEditProductEvent = new EventEmitter<Product>();
-  categoriesList: Category[];
-  choosedCategory: Category;
+  categoriesList: ICategory[];
+  choosedCategory: ICategory;
   productList$: Observable<Product[]>;
 
   constructor(private productsService: ProductsService) {}
 
-  categorySelected(category: Category) {
+  categorySelected(category: ICategory) {
     this.choosedCategory = category;
   }
 

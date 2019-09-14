@@ -1,6 +1,6 @@
 import { fade } from '../../animations/fade.animation';
 import { Product } from '../../core/models/product.model';
-import { Category } from '../../core/models/category.model';
+import { ICategory } from '../../core/models/category.model';
 import { ProductsService } from '../../core/services/products.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -13,7 +13,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ProductFormComponent implements OnInit {
   productForm: FormGroup;
-  categories: Category[];
+  categories: ICategory[];
   @Input() product: Product = null;
   @Output() formSubmitedEvent = new EventEmitter();
   @Output() formDirtyEvent = new EventEmitter<boolean>();

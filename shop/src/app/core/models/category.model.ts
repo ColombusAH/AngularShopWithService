@@ -1,3 +1,4 @@
-export class Category {
-  constructor(public id: string, public title: string) {}
+export interface ICategory {
+  id: string;
+  title: string;
 }

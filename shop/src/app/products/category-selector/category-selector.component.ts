@@ -1,4 +1,4 @@
-import { Category } from '../../core/models/category.model';
+import { ICategory } from '../../core/models/category.model';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -7,12 +7,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./category-selector.component.css']
 })
 export class CategorySelectorComponent {
-  @Input() categoriesList: Category[];
-  @Output() categorySelectedEvent = new EventEmitter<Category>();
+  @Input() categoriesList: ICategory[];
+  @Output() categorySelectedEvent = new EventEmitter<ICategory>();
   isFirst = true;
   constructor() {}
 
-  categorySelected(selectedCategory: Category) {
+  categorySelected(selectedCategory: ICategory) {
     this.categorySelectedEvent.emit(selectedCategory);
     this.isFirst = false;
   }

@@ -1,6 +1,5 @@
 import { Product } from '../models/product.model';
 import { Injectable } from '@angular/core';
-import { Category } from '../models/category.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import * as _ from 'lodash';
