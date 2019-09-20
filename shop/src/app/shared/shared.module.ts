@@ -8,15 +8,15 @@ import { CategoryProductFilterPipe } from './pipes/category-product-filter.pipe'
 import { IdProductFilterPipe } from './pipes/id-product-filter.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { TranslatePipe } from './pipes/translate.pipe';
-import { ShoppingListProductAdderRemoverComponent } from './shopping-list-product-adder-remover/shopping-list-product-adder-remover.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdModalConfirmComponent } from './ngbd-modal-confirm/ngbd-modal-confirm.component';
-import { NgbdAlertCloseable } from './success-popup/success-popup.component';
 import { SocialLinkComponent } from './layout/social-link/social-link.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SidebarMenuComponent } from './layout/sidebar-menu/sidebar-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { ShoppingListProductAdderRemoverComponent } from './components/shopping-list-product-adder-remover/shopping-list-product-adder-remover.component';
+import { NgbdModalConfirmComponent } from './components/ngbd-modal-confirm/ngbd-modal-confirm.component';
+import { NgbdAlertCloseable } from './components/success-popup/success-popup.component';
 
 @NgModule({
   declarations: [
